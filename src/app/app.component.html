@@ -49,3 +49,13 @@
 <h2 style="color: blue;"> *ngFor starts </h2>
 <h3 *ngFor="let person of persons">{{person.name}} -> {{person.email}}</h3>
 <h2> *ngFor ends </h2>
+
+<h2 style="color: blue;">ngForm starts</h2>
+<form #userForm="ngForm" (ngSubmit)="on_form_submit(userForm.value)">
+  <input ngModel type="text" placeholder="Your first name" name="first_name"><br>
+  <input ngModel type="text" placeholder="Your last name" name="last_name"><br>
+  <input ngModel type="text" placeholder="Your email" name="email"><br>
+  <input ngModel type="text" placeholder="Your contact number" name="contact"><br>
+  <button type="submit">Submit</button>
+</form>
+<h2>ngForm ends</h2>

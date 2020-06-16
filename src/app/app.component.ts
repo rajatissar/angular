@@ -34,4 +34,7 @@ export class AppComponent {
     alert(item.value);
   }
 
+  on_form_submit(form_data) {
+    console.log('form_data', form_data);
+  }
 }
