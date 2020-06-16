@@ -37,4 +37,12 @@ export class AppComponent {
   on_form_submit(form_data) {
     console.log('form_data', form_data);
   }
+
+  on_change_color() {
+    if (this.color == 'green') {
+      this.color = 'yellow';
+    } else {
+      this.color = 'green';
+    }
+  }
 }

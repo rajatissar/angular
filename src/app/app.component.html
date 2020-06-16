@@ -61,4 +61,9 @@
 </form>
 <h2>ngForm ends</h2>
 
+<h2 style="color: blue;">Dynamic style starts</h2>
+<h3 [style.color]="color"> Change my color by click on below button</h3>
+<button (click)="on_change_color()">Change color</button>
+<h2>Dynamic style ends</h2>
+
 <app-footer></app-footer>
