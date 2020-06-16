@@ -46,4 +46,8 @@ export class AppComponent {
       this.color = 'green';
     }
   }
+
+  pass_data_from_child_to_parent(data) {
+    console.log('data from child to parent->', data);
+  }
 }

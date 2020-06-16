@@ -8,14 +8,16 @@ import { UsersComponent } from './users/users.component';
 
 import { UsersModule } from './users/users.module';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component'
+import { FooterComponent } from './footer/footer.component';
+import { ChildComponent } from './child/child.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
