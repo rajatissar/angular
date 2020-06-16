@@ -1,21 +1,40 @@
 <h1>main component</h1>
 <app-users></app-users>
 <app-login></app-login>
+
 <h2>Interpolation starts</h2>
 <h3>{{string1}}</h3>
 <h3>
   <<<<< {{array1}}>>>>> {{array1[0]}} >>>>>
 </h3>
 <h2>Interpolation ends</h2>
+
 <h2>Function call starts</h2>
 <button (click)="click_fun('hello from click function')"> click me</button>
 <button (mouseenter)="mouseenter_fun('hello from mouseenter function')">On mouseenter / hover</button>
 <h2>Function call ends</h2>
+
 <h2>get text box value starts</h2>
 <input type="text" #first_name (keyup)="on_key_press($event)">
 <button (click)="on_submit(first_name)">Submit</button>
 <h2>get text box value ends</h2>
+
 <h2>Property Binding starts</h2>
 <input type="text" disabled={{disabled}}><br>
 <input type="text" [disabled]=disabled> Property Binding
 <h2>Property Binding ends</h2>
+
+<h2>*ngIf starts</h2>
+<h3 *ngIf=show_hidden_text>Hidden Text</h3>
+<h2>*ngIf ends</h2>
+
+<h2>*ngIf if/else starts</h2>
+<h3 *ngIf="show_hidden_text; then if_block else else_block"></h3>
+<h3 *ngIf="show_hidden_text && title=='youtube1' then if_block else else_block"></h3>
+<ng-template #if_block>
+  <h3>If Block</h3>
+</ng-template>
+<ng-template #else_block>
+  <h3> Else Block </h3>
+</ng-template>
+<h2>*ngIf if/else ends</h2>

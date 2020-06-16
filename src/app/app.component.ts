@@ -11,6 +11,7 @@ export class AppComponent {
   array1 = [1, 2, 3, 4];
   object1 = { 'first_name': 'Rajat', 'last_name': 'Kumar' };
   disabled = false;
+  show_hidden_text = true;
 
   click_fun(parm1) {
     alert(parm1);
