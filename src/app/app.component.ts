@@ -13,6 +13,10 @@ export class AppComponent {
   disabled = false;
   show_hidden_text = true;
   color = "green";
+  persons = [
+    { name: 'Rajat', email: 'rajat.kumar@daffodilsw.com' },
+    { name: 'Sherlock', email: 'sherlock@daffodilsw.com' }
+  ];
 
   click_fun(parm1) {
     alert(parm1);
