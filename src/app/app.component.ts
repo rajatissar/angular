@@ -12,6 +12,7 @@ export class AppComponent {
   object1 = { 'first_name': 'Rajat', 'last_name': 'Kumar' };
   disabled = false;
   show_hidden_text = true;
+  color = "green";
 
   click_fun(parm1) {
     alert(parm1);
