@@ -17,6 +17,7 @@ export class AppComponent {
     { name: 'Rajat', email: 'rajat.kumar@daffodilsw.com' },
     { name: 'Sherlock', email: 'sherlock@daffodilsw.com' }
   ];
+  heros = ['hulk', 'thor', 'superman', 'batman'];
 
   click_fun(parm1) {
     alert(parm1);
