@@ -11,3 +11,7 @@
 <button (click)="click_fun('hello from click function')"> click me</button>
 <button (mouseenter)="mouseenter_fun('hello from mouseenter function')">On mouseenter / hover</button>
 <h2>Function call ends</h2>
+<h2>get text box value starts</h2>
+<input type="text" #first_name (keyup)="on_key_press($event)">
+<button (click)="on_submit(first_name)">Submit</button>
+<h2>get text box value ends</h2>

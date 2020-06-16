@@ -18,4 +18,13 @@ export class AppComponent {
   mouseenter_fun(parm1) {
     alert(parm1);
   }
+
+  on_key_press(event) {
+    console.log(event.target.value)
+  }
+
+  on_submit(item) {
+    alert(item.value);
+  }
+
 }
