@@ -10,6 +10,7 @@ export class AppComponent {
   string1 = 'Rajat';
   array1 = [1, 2, 3, 4];
   object1 = { 'first_name': 'Rajat', 'last_name': 'Kumar' };
+  disabled = false;
 
   click_fun(parm1) {
     alert(parm1);

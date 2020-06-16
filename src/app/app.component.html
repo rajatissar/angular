@@ -15,3 +15,7 @@
 <input type="text" #first_name (keyup)="on_key_press($event)">
 <button (click)="on_submit(first_name)">Submit</button>
 <h2>get text box value ends</h2>
+<h2>Property Binding starts</h2>
+<input type="text" disabled={{disabled}}><br>
+<input type="text" [disabled]=disabled> Property Binding
+<h2>Property Binding ends</h2>
