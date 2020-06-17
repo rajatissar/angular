@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ChildComponent } from './child/child.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomStyleDirective } from './custom-style.directive';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CustomStyleDirective } from './custom-style.directive';
     HeaderComponent,
     FooterComponent,
     ChildComponent,
-    CustomStyleDirective
+    CustomStyleDirective,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
