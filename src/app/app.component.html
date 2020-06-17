@@ -28,12 +28,12 @@
 <h2>Property Binding ends</h2>
 
 <h2 style="color: blue;">*ngIf starts</h2>
-<h3 *ngIf=show_hidden_text>Hidden Text</h3>
+<h3 *ngIf=showHiddenText>Hidden Text</h3>
 <h2>*ngIf ends</h2>
 
 <h2 style="color: blue;">*ngIf if/else starts</h2>
-<h3 *ngIf="show_hidden_text; then if_block else else_block"></h3>
-<h3 *ngIf="show_hidden_text && title=='youtube1' then if_block else else_block"></h3>
+<h3 *ngIf="showHiddenText; then if_block else else_block"></h3>
+<h3 *ngIf="showHiddenText && title=='youtube1' then if_block else else_block"></h3>
 <ng-template #if_block>
   <h3>If Block</h3>
 </ng-template>
@@ -67,5 +67,28 @@
 <h3 [style.color]="color"> Change my color by click on below button</h3>
 <button (click)="on_change_color()">Change color</button>
 <h2>Dynamic style ends</h2>
+
+<h2 style="color: blue;">Bootstrap starts</h2>
+<p>
+  <ngb-alert [dismissible]="false">
+    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+  </ngb-alert>
+</p>
+
+<div class="btn-group btn-group-toggle">
+  <label class="btn-primary" ngbButtonLabel>
+    <input type="checkbox" ngbButton [(ngModel)]="model.left"> Left (pre-checked)
+  </label>
+  <label class="btn-primary" ngbButtonLabel>
+    <input type="checkbox" ngbButton [(ngModel)]="model.middle"> Middle
+  </label>
+  <label class="btn-primary" ngbButtonLabel>
+    <input type="checkbox" ngbButton [(ngModel)]="model.right"> Right
+  </label>
+</div>
+<hr>
+<pre>{{model | json}}</pre>
+<h2>Bootstrap ends</h2>
+
 
 <app-footer></app-footer>
