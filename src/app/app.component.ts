@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +29,7 @@ export class AppComponent {
   };
   posts: Array<object>;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private userData: UserService) { }
 
   onInit(): void {
     this.http.get<[]>('https://jsonplaceholder.typicode.com/posts')
@@ -76,5 +77,9 @@ export class AppComponent {
       .subscribe((result) => {
         console.log('onTemplateDrivenFormSubmit -> result', result);
       });
+  }
+
+  call_service_method() {
+    this.userData.get_data('Data from component to service');
   }
 }

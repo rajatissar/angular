@@ -138,5 +138,10 @@
   <li *ngFor="let post of posts">{{post.id}} -> {{post.title}}</li>
 </ul>
 <h2>call Get API ends</h2>
+<hr>
+
+<h2 style="color: blue;">Call service method starts</h2>
+<button (click)="call_service_method()"> Call Service Method </button>
+<h2>Call service method ends</h2>
 
 <app-footer></app-footer>
