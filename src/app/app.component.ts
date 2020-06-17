@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,17 @@ export class AppComponent {
     middle: false,
     right: false
   };
+  posts: Array<object>;
+
+  constructor(private http: HttpClient) { }
+
+  ngOnInit(): void {
+    this.http.get('https://jsonplaceholder.typicode.com/posts')
+      .subscribe((data) => {
+        console.log('AppComponent -> ngOnInit -> data', data);
+        this.posts = data;
+      });
+  }
 
   click_fun(parm1) {
     alert(parm1);

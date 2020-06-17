@@ -14,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomStyleDirective } from './custom-style.directive';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     AppRoutingModule,
     UsersModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

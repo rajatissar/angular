@@ -132,4 +132,11 @@
 </form>
 <!-- </div> -->
 <h2>Template driven form ends</h2>
+
+<h2 style="color: blue;">call Get API starts</h2>
+<ul>
+  <li *ngFor="let post of posts">{{post.id}} -> {{post.title}}</li>
+</ul>
+<h2>call Get API ends</h2>
+
 <app-footer></app-footer>
