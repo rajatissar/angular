@@ -57,4 +57,8 @@ export class AppComponent {
   pass_data_from_child_to_parent(data) {
     console.log('data from child to parent->', data);
   }
+
+  onTemplateDrivenFormSubmit(data) {
+    console.log('onTemplateDrivenFormSubmit -> data', data);
+  }
 }
