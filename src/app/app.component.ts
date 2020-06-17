@@ -30,8 +30,8 @@ export class AppComponent {
 
   constructor(private http: HttpClient) { }
 
-  ngOnInit(): void {
-    this.http.get('https://jsonplaceholder.typicode.com/posts')
+  onInit(): void {
+    this.http.get<[]>('https://jsonplaceholder.typicode.com/posts')
       .subscribe((data) => {
         console.log('AppComponent -> ngOnInit -> data', data);
         this.posts = data;
@@ -72,5 +72,9 @@ export class AppComponent {
 
   onTemplateDrivenFormSubmit(data) {
     console.log('onTemplateDrivenFormSubmit -> data', data);
+    this.http.post('http://localhost:1415/signUp', data)
+      .subscribe((result) => {
+        console.log('onTemplateDrivenFormSubmit -> result', result);
+      });
   }
 }
