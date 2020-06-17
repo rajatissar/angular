@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ChildComponent } from './child/child.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CustomStyleDirective } from './custom-style.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UsersComponent,
     HeaderComponent,
     FooterComponent,
-    ChildComponent
+    ChildComponent,
+    CustomStyleDirective
   ],
   imports: [
     BrowserModule,
