@@ -13,6 +13,7 @@ import { ChildComponent } from './child/child.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomStyleDirective } from './custom-style.directive';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FooterComponent,
     ChildComponent,
     CustomStyleDirective,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
