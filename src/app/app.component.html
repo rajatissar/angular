@@ -144,4 +144,12 @@
 <button (click)="call_service_method()"> Call Service Method </button>
 <h2>Call service method ends</h2>
 
+<h2 style="color: blue;">Call API with service starts</h2>
+<button (click)="call_api_with_service()"> Call API with service </button>
+<ul>
+  <li *ngFor="let postCallAPIWithService of postsCallAPIWithService">
+    {{postCallAPIWithService.id}} -> {{postCallAPIWithService.title}}</li>
+</ul>
+<h2>Call API with service ends</h2>
+
 <app-footer></app-footer>

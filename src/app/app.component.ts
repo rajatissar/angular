@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from './user.service';
+import { PostsService } from './posts.service';
 
 @Component({
   selector: 'app-root',
@@ -28,8 +29,9 @@ export class AppComponent {
     right: false
   };
   posts: Array<object>;
+  postsCallAPIWithService: Array<object>;
 
-  constructor(private http: HttpClient, private userData: UserService) { }
+  constructor(private http: HttpClient, private userData: UserService, private postData: PostsService) { }
 
   onInit(): void {
     this.http.get<[]>('https://jsonplaceholder.typicode.com/posts')
@@ -81,5 +83,13 @@ export class AppComponent {
 
   call_service_method() {
     this.userData.get_data('Data from component to service');
+  }
+
+  call_api_with_service() {
+    this.postData.getPosts()
+      .subscribe((result) => {
+        console.log('call_api_with_service -> result ->>', result);
+        this.postsCallAPIWithService = result;
+      });
   }
 }
