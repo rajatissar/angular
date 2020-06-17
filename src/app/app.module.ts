@@ -9,7 +9,8 @@ import { UsersComponent } from './users/users.component';
 import { UsersModule } from './users/users.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { ChildComponent } from './child/child.component'
+import { ChildComponent } from './child/child.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ChildComponent } from './child/child.component'
     BrowserModule,
     AppRoutingModule,
     UsersModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
