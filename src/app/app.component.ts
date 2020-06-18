@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { UserService } from './user.service';
 import { PostsService } from './posts.service';
 import { ModalService } from './modal.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -37,6 +38,10 @@ export class AppComponent {
     email: 'rajat.kumar@daffodilsw.com',
     password: 123456
   };
+  loginForm = new FormGroup({
+    email: new FormControl(),
+    password: new FormControl()
+  });
 
   constructor(private http: HttpClient, private userData: UserService, private postData: PostsService, private modalData: ModalService) { }
 
@@ -100,5 +105,9 @@ export class AppComponent {
         console.log('call_api_with_service -> result ->>', result);
         this.postsCallAPIWithService = result;
       });
+  }
+
+  onReactiveFormSubmit() {
+    console.log('ReactiveForm Data', this.loginForm.value);
   }
 }

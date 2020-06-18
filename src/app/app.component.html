@@ -182,4 +182,14 @@
     <h2>Pipe ends</h2>
     <hr>
 
+    <h2 style="color: blue;"> Reactive Form starts </h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onReactiveFormSubmit()">
+        <input formControlName="email" type="email" placeholder="email">
+        <br>
+        <input formControlName="password" type="password" placeholder="password">
+        <br>
+        <button type="submit"> Submit </button>
+    </form>
+    <h2>Reactive Form ends</h2>
+
     <app-footer></app-footer>
