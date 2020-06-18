@@ -8,7 +8,7 @@
 <h2 style="color: blue;">Interpolation starts</h2>
 <h3>{{string1}}</h3>
 <h3>
-  <<<<< {{array1}}>>>>> {{array1[0]}} >>>>>
+    <<<<< {{array1}}>>>>> {{array1[0]}} >>>>>
 </h3>
 <h2>Interpolation ends</h2>
 
@@ -35,17 +35,17 @@
 <h3 *ngIf="showHiddenText; then if_block else else_block"></h3>
 <h3 *ngIf="showHiddenText && title=='youtube1' then if_block else else_block"></h3>
 <ng-template #if_block>
-  <h3>If Block</h3>
+    <h3>If Block</h3>
 </ng-template>
 <ng-template #else_block>
-  <h3> Else Block </h3>
+    <h3> Else Block </h3>
 </ng-template>
 <h2>*ngIf if/else ends</h2>
 
 <h2 style="color: blue;">*ngSwitch starts</h2>
 <div [ngSwitch]="color">
-  <h4 *ngSwitchCase="'yellow'" style="color: yellow"> Yellow color</h4>
-  <h4 *ngSwitchCase="'green'" style="color: green;"> Green color</h4>
+    <h4 *ngSwitchCase="'yellow'" style="color: yellow"> Yellow color</h4>
+    <h4 *ngSwitchCase="'green'" style="color: green;"> Green color</h4>
 </div>
 <h2>*ngSwitch ends</h2>
 
@@ -55,11 +55,11 @@
 
 <h2 style="color: blue;">ngForm starts</h2>
 <form #userForm="ngForm" (ngSubmit)="on_form_submit(userForm.value)">
-  <input ngModel type="text" placeholder="Your first name" name="first_name"><br>
-  <input ngModel type="text" placeholder="Your last name" name="last_name"><br>
-  <input ngModel type="text" placeholder="Your email" name="email"><br>
-  <input ngModel type="text" placeholder="Your contact number" name="contact"><br>
-  <button type="submit">Submit</button>
+    <input ngModel type="text" placeholder="Your first name" name="first_name"><br>
+    <input ngModel type="text" placeholder="Your last name" name="last_name"><br>
+    <input ngModel type="text" placeholder="Your email" name="email"><br>
+    <input ngModel type="text" placeholder="Your contact number" name="contact"><br>
+    <button type="submit">Submit</button>
 </form>
 <h2>ngForm ends</h2>
 
@@ -70,19 +70,19 @@
 
 <h2 style="color: blue;">Bootstrap starts</h2>
 <p>
-  <ngb-alert [dismissible]="false">
-    <strong>Warning!</strong> Better check yourself, you're not looking too good.
-  </ngb-alert>
+    <ngb-alert [dismissible]="false">
+        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+    </ngb-alert>
 </p>
 
 <div class="btn-group btn-group-toggle">
-  <label class="btn-primary" ngbButtonLabel>
+    <label class="btn-primary" ngbButtonLabel>
     <input type="checkbox" ngbButton [(ngModel)]="model.left"> Left (pre-checked)
   </label>
-  <label class="btn-primary" ngbButtonLabel>
+    <label class="btn-primary" ngbButtonLabel>
     <input type="checkbox" ngbButton [(ngModel)]="model.middle"> Middle
   </label>
-  <label class="btn-primary" ngbButtonLabel>
+    <label class="btn-primary" ngbButtonLabel>
     <input type="checkbox" ngbButton [(ngModel)]="model.right"> Right
   </label>
 </div>
@@ -119,23 +119,24 @@
 <h2 style="color: blue;">Template driven form starts</h2>
 <!-- <div class="col-sm-6"> -->
 <form #templateDrivenForm="ngForm" (ngSubmit)="onTemplateDrivenFormSubmit(templateDrivenForm.value)">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input required ngModel name="email" type="email" class="form-control" placeholder="Enter email">
-    <small class="form-text text-muted">Email is required</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input ngModel name="password" type="password" class="form-control" placeholder="Password">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input required #email="ngModel" ngModel name="email" type="email" class="form-control" placeholder="Enter email">
+        <small *ngIf="email.invalid && email.touched" class="error">Email is required</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input required #password="ngModel" ngModel minlength="4" name="password" type="password" class="form-control" placeholder="Password">
+        <small *ngIf="password.invalid && password.touched" class="error">Password is invalid</small>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <!-- </div> -->
 <h2>Template driven form ends</h2>
 
 <h2 style="color: blue;">call Get API starts</h2>
 <ul>
-  <li *ngFor="let post of posts">{{post.id}} -> {{post.title}}</li>
+    <li *ngFor="let post of posts">{{post.id}} -> {{post.title}}</li>
 </ul>
 <h2>call Get API ends</h2>
 <hr>
@@ -147,8 +148,8 @@
 <h2 style="color: blue;">Call API with service starts</h2>
 <button (click)="call_api_with_service()"> Call API with service </button>
 <ul>
-  <li *ngFor="let postCallAPIWithService of postsCallAPIWithService">
-    {{postCallAPIWithService.id}} -> {{postCallAPIWithService.title}}</li>
+    <li *ngFor="let postCallAPIWithService of postsCallAPIWithService">
+        {{postCallAPIWithService.id}} -> {{postCallAPIWithService.title}}</li>
 </ul>
 <h2>Call API with service ends</h2>
 
