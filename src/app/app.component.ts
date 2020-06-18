@@ -39,8 +39,8 @@ export class AppComponent {
     password: 123456
   };
   loginForm = new FormGroup({
-    email: new FormControl('', Validators.required),
-    password: new FormControl()
+    email: new FormControl('', [Validators.required, Validators.pattern('[a-z]')]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(8)])
   });
 
   constructor(private http: HttpClient, private userData: UserService, private postData: PostsService, private modalData: ModalService) { }

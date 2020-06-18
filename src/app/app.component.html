@@ -190,7 +190,7 @@
     <input formControlName="password" type="password" placeholder="password">{{password2.invalid}} && {{password2.touched}}
     <small *ngIf="password2.invalid && password2.touched" class="error">Password is required</small>
     <br>
-    <button type="submit"> Submit </button>
+    <button type="submit" [disabled]="loginForm.invalid"> Submit </button> {{loginForm.invalid}}
 </form>
 <h2>Reactive Form ends</h2>
 
