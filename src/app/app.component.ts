@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { UserService } from './user.service';
 import { PostsService } from './posts.service';
 import { ModalService } from './modal.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -39,7 +39,7 @@ export class AppComponent {
     password: 123456
   };
   loginForm = new FormGroup({
-    email: new FormControl(),
+    email: new FormControl('', Validators.required),
     password: new FormControl()
   });
 
@@ -109,5 +109,13 @@ export class AppComponent {
 
   onReactiveFormSubmit() {
     console.log('ReactiveForm Data', this.loginForm.value);
+  }
+
+  get email2() {
+    return this.loginForm.get('email');
+  }
+
+  get password2() {
+    return this.loginForm.get('password');
   }
 }
