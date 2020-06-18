@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from './user.service';
 import { PostsService } from './posts.service';
+import { ModalService } from './modal.service';
 
 @Component({
   selector: 'app-root',
@@ -31,7 +32,7 @@ export class AppComponent {
   posts: Array<object>;
   postsCallAPIWithService: Array<object>;
 
-  constructor(private http: HttpClient, private userData: UserService, private postData: PostsService) { }
+  constructor(private http: HttpClient, private userData: UserService, private postData: PostsService, private modalData: ModalService) { }
 
   onInit(): void {
     this.http.get<[]>('https://jsonplaceholder.typicode.com/posts')
@@ -47,6 +48,8 @@ export class AppComponent {
 
   mouseenter_fun(parm1) {
     alert(parm1);
+    const data1 = this.modalData.getData();
+    console.log('dAppComponent -> data1 ->>', data1);
   }
 
   on_key_press(event) {
