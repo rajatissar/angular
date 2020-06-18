@@ -1,9 +1,17 @@
 <app-header></app-header>
-<h1>Main component</h1>
+<hr>
+
+<h1> Main component </h1>
+<hr>
+
 <app-users [heros]="heros"></app-users>
-<app-child (callParentFunction)="pass_data_from_child_to_parent($event)">
-</app-child>
+<hr>
+
+<app-child (callParentFunction)="pass_data_from_child_to_parent($event)"></app-child>
+<hr>
+
 <app-login></app-login>
+<hr>
 
 <h2 style="color: blue;">Interpolation starts</h2>
 <h3>{{string1}}</h3>
@@ -11,25 +19,30 @@
     <<<<< {{array1}}>>>>> {{array1[0]}} >>>>>
 </h3>
 <h2>Interpolation ends</h2>
+<hr>
 
 <h2 style="color: blue;">Function call starts</h2>
 <button (click)="click_fun('hello from click function')"> click me</button>
 <button (mouseenter)="mouseenter_fun('hello from mouseenter function')">On mouseenter / hover</button>
 <h2>Function call ends</h2>
+<hr>
 
 <h2 style="color: blue;">get text box value starts</h2>
 <input type="text" #first_name (keyup)="on_key_press($event)">
 <button (click)="on_submit(first_name)">Submit</button>
 <h2>get text box value ends</h2>
+<hr>
 
 <h2 style="color: blue;">Property Binding starts</h2>
 <input type="text" disabled={{disabled}}><br>
 <input type="text" [disabled]=disabled> Property Binding
 <h2>Property Binding ends</h2>
+<hr>
 
 <h2 style="color: blue;">*ngIf starts</h2>
 <h3 *ngIf=showHiddenText>Hidden Text</h3>
 <h2>*ngIf ends</h2>
+<hr>
 
 <h2 style="color: blue;">*ngIf if/else starts</h2>
 <h3 *ngIf="showHiddenText; then if_block else else_block"></h3>
@@ -41,6 +54,7 @@
     <h3> Else Block </h3>
 </ng-template>
 <h2>*ngIf if/else ends</h2>
+<hr>
 
 <h2 style="color: blue;">*ngSwitch starts</h2>
 <div [ngSwitch]="color">
@@ -48,10 +62,12 @@
     <h4 *ngSwitchCase="'green'" style="color: green;"> Green color</h4>
 </div>
 <h2>*ngSwitch ends</h2>
+<hr>
 
 <h2 style="color: blue;"> *ngFor starts </h2>
 <h3 *ngFor="let person of persons">{{person.name}} -> {{person.email}}</h3>
 <h2> *ngFor ends </h2>
+<hr>
 
 <h2 style="color: blue;">ngForm starts</h2>
 <form #userForm="ngForm" (ngSubmit)="on_form_submit(userForm.value)">
@@ -62,11 +78,13 @@
     <button type="submit">Submit</button>
 </form>
 <h2>ngForm ends</h2>
+<hr>
 
 <h2 style="color: blue;">Dynamic style starts</h2>
 <h3 [style.color]="color"> Change my color by click on below button</h3>
 <button (click)="on_change_color()">Change color</button>
 <h2>Dynamic style ends</h2>
+<hr>
 
 <h2 style="color: blue;">Bootstrap starts</h2>
 <p>
@@ -89,6 +107,7 @@
 <hr>
 <pre>{{model | json}}</pre>
 <h2>Bootstrap ends</h2>
+<hr>
 
 <h2 style="color: blue;">Directive starts</h2>
 <h3>This has no color</h3>
@@ -127,36 +146,40 @@
     <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
         <input required #password="ngModel" ngModel minlength="4" name="password" type="password" class="form-control" placeholder="Password">
-        <small *ngIf="password.invalid && password.touched" class="error">Password is invalid</small>
+
+        <small *ngIf=" password.invalid && password.touched " class=" error ">Password is invalid</small>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-<!-- </div> -->
-<h2>Template driven form ends</h2>
+    <button type=" submit " class=" btn btn-primary ">Submit</button>
+    </ form>
+    <!-- </div> -->
+    <h2>Template driven form ends</h2>
+    <hr>
 
-<h2 style="color: blue;">call Get API starts</h2>
-<ul>
-    <li *ngFor="let post of posts">{{post.id}} -> {{post.title}}</li>
-</ul>
-<h2>call Get API ends</h2>
-<hr>
+    <h2 style=" color: blue; ">Call Get API starts</h2>
+    <ul>
+        <li *ngFor=" let post of posts ">{{post.id}} -> {{post.title}}</li>
+    </ul>
+    <h2>Call Get API ends</h2>
+    <hr>
 
-<h2 style="color: blue;">Call service method starts</h2>
-<button (click)="call_service_method()"> Call Service Method </button>
-<h2>Call service method ends</h2>
+    <h2 style=" color: blue; ">Call service method starts</h2>
+    <button (click)=" call_service_method() "> Call Service Method </button>
+    <h2>Call service method ends</h2>
+    <hr>
 
-<h2 style="color: blue;">Call API with service starts</h2>
-<button (click)="call_api_with_service()"> Call API with service </button>
-<ul>
-    <li *ngFor="let postCallAPIWithService of postsCallAPIWithService">
-        {{postCallAPIWithService.id}} -> {{postCallAPIWithService.title}}</li>
-</ul>
-<h2>Call API with service ends</h2>
+    <h2 style=" color: blue; ">Call API with service starts</h2>
+    <button (click)=" call_api_with_service() "> Call API with service </button>
+    <ul>
+        <li *ngFor=" let postCallAPIWithService of postsCallAPIWithService ">
+            {{postCallAPIWithService.id}} -> {{postCallAPIWithService.title}}</li>
+    </ul>
+    <h2>Call API with service ends</h2>
+    <hr>
 
-<h2 style=" color: blue; ">Pipe starts</h2>
-<h3>{{strPipe | uppercase}}</h3>
-<h3>{{datePipe | date}}</h3>
-<h2>Pipe ends</h2>
-<hr>
+    <h2 style=" color: blue; ">Pipe starts</h2>
+    <h3>{{strPipe | uppercase}}</h3>
+    <h3>{{datePipe | date}}</h3>
+    <h2>Pipe ends</h2>
+    <hr>
 
-<app-footer></app-footer>
+    <app-footer></app-footer>
