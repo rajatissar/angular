@@ -31,6 +31,8 @@ export class AppComponent {
   };
   posts: Array<object>;
   postsCallAPIWithService: Array<object>;
+  strPipe = 'hello';
+  datePipe = new Date();
 
   constructor(private http: HttpClient, private userData: UserService, private postData: PostsService, private modalData: ModalService) { }
 
