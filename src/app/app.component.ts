@@ -33,6 +33,10 @@ export class AppComponent {
   postsCallAPIWithService: Array<object>;
   strPipe = 'hello';
   datePipe = new Date();
+  user1 = {
+    email: 'rajat.kumar@daffodilsw.com',
+    password: 123456
+  };
 
   constructor(private http: HttpClient, private userData: UserService, private postData: PostsService, private modalData: ModalService) { }
 

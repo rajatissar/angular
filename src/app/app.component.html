@@ -140,12 +140,12 @@
 <form #templateDrivenForm="ngForm" (ngSubmit)="onTemplateDrivenFormSubmit(templateDrivenForm.value)">
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
-        <input required #email="ngModel" ngModel name="email" type="email" class="form-control" placeholder="Enter email">
+        <input required #email="ngModel" [ngModel]="user1.email" name="email" type="email" class="form-control" placeholder="Enter email">
         <small *ngIf="email.invalid && email.touched" class="error">Email is required</small>
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input required #password="ngModel" ngModel minlength="4" name="password" type="password" class="form-control" placeholder="Password">
+        <input required #password="ngModel" [ngModel]="user1.password" name="password" type="password" class="form-control" placeholder="Password" minlength="4">
 
         <small *ngIf=" password.invalid && password.touched " class=" error ">Password is invalid</small>
     </div>
