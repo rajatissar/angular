@@ -9,10 +9,10 @@ export class UsersComponent implements OnInit {
 
   // constructor() { }
 
-  @Input() heros;
+  @Input() var1;
 
   ngOnInit(): void {
-    console.log('this.heros', this.heros);
+    console.log('parent to child data ->>', this.var1);
   }
 
 }

@@ -1,92 +1,90 @@
 <app-header></app-header>
 <hr>
 
-<h1> Main component </h1>
+<h2 style="color: green;"> App component </h2>
 <hr>
 
-<app-users [heros]="heros"></app-users>
-<hr>
-
-<app-child (callParentFunction)="pass_data_from_child_to_parent($event)"></app-child>
-<hr>
-
+<h2 style="color: blue;"> Showing component (Login) by module </h2>
 <app-login></app-login>
 <hr>
 
-<h2 style="color: blue;">Interpolation starts</h2>
-<h3>{{string1}}</h3>
-<h3>
-    <<<<< {{array1}}>>>>> {{array1[0]}} >>>>>
-</h3>
-<h2>Interpolation ends</h2>
+<h2 style="color: blue;"> Interpolation </h2>
+<p> string1 ->> {{string1}} </p>
+<p> array1 ->> {{array1}} </p>
+<p> array1[0] ->> {{array1[0]}} </p>
 <hr>
 
-<h2 style="color: blue;">Function call starts</h2>
-<button (click)="click_fun('hello from click function')"> click me</button>
-<button (mouseenter)="mouseenter_fun('hello from mouseenter function')">On mouseenter / hover</button>
-<h2>Function call ends</h2>
+<h2 style="color: blue;"> Function call </h2>
+<button (click)="click_fun('hello from click function')"> click me </button>
+<br>
+<button (mouseenter)="mouseenter_fun('hello from mouseenter function')"> On hover (mouseenter)</button>
 <hr>
 
-<h2 style="color: blue;">get text box value starts</h2>
+<h2 style="color: blue;"> Get textbox value</h2>
 <input type="text" #first_name (keyup)="on_key_press($event)">
-<button (click)="on_submit(first_name)">Submit</button>
-<h2>get text box value ends</h2>
+<br>
+<button (click)="getTextBoxValue(first_name)">Submit</button>
 <hr>
 
-<h2 style="color: blue;">Property Binding starts</h2>
-<input type="text" disabled={{disabled}}><br>
-<input type="text" [disabled]=disabled> Property Binding
-<h2>Property Binding ends</h2>
+<h2 style="color: blue;"> Property Binding </h2>
+<input type="text" disabled={{disabled}}> Without Property Binding
+<br>
+<input type="text" [disabled]=disabled> With Property Binding
 <hr>
 
-<h2 style="color: blue;">*ngIf starts</h2>
-<h3 *ngIf=showHiddenText>Hidden Text</h3>
-<h2>*ngIf ends</h2>
+<h2 style="color: blue;"> *ngIf </h2>
+<p *ngIf=showHiddenText> Hidden Text </p>
 <hr>
 
-<h2 style="color: blue;">*ngIf if/else starts</h2>
-<h3 *ngIf="showHiddenText; then if_block else else_block"></h3>
-<h3 *ngIf="showHiddenText && title=='youtube1' then if_block else else_block"></h3>
+<h2 style="color: blue;"> *ngIf if/else</h2>
+<p *ngIf="showHiddenText; then if_block else else_block"></p>
+<p *ngIf="showHiddenText && title=='youtube1' then if_block else else_block"></p>
+
 <ng-template #if_block>
-    <h3>If Block</h3>
+    <p> If Block </p>
 </ng-template>
 <ng-template #else_block>
-    <h3> Else Block </h3>
+    <p> Else Block </p>
 </ng-template>
-<h2>*ngIf if/else ends</h2>
+
 <hr>
 
-<h2 style="color: blue;">*ngSwitch starts</h2>
+<h2 style="color: blue;"> *ngSwitch </h2>
 <div [ngSwitch]="color">
-    <h4 *ngSwitchCase="'yellow'" style="color: yellow"> Yellow color</h4>
-    <h4 *ngSwitchCase="'green'" style="color: green;"> Green color</h4>
+    <p *ngSwitchCase="'yellow'" style="color: yellow"> Yellow color</p>
+    <p *ngSwitchCase="'green'" style="color: green;"> Green color</p>
+    <p *ngSwitchDefault style="color: red;"> Red color</p>
 </div>
-<h2>*ngSwitch ends</h2>
 <hr>
 
-<h2 style="color: blue;"> *ngFor starts </h2>
-<h3 *ngFor="let person of persons">{{person.name}} -> {{person.email}}</h3>
-<h2> *ngFor ends </h2>
+<h2 style="color: blue;"> *ngFor </h2>
+<p *ngFor="let person of persons">{{person.name}} -> {{person.email}}</p>
 <hr>
 
-<h2 style="color: blue;">ngForm starts</h2>
+<h2 style="color: blue;"> ngForm </h2>
 <form #userForm="ngForm" (ngSubmit)="on_form_submit(userForm.value)">
     <input ngModel type="text" placeholder="Your first name" name="first_name"><br>
     <input ngModel type="text" placeholder="Your last name" name="last_name"><br>
     <input ngModel type="text" placeholder="Your email" name="email"><br>
     <input ngModel type="text" placeholder="Your contact number" name="contact"><br>
-    <button type="submit">Submit</button>
+    <button type="submit"> Submit Form </button>
 </form>
-<h2>ngForm ends</h2>
 <hr>
 
-<h2 style="color: blue;">Dynamic style starts</h2>
-<h3 [style.color]="color"> Change my color by click on below button</h3>
-<button (click)="on_change_color()">Change color</button>
-<h2>Dynamic style ends</h2>
+<h2 style="color: blue;"> Dynamic style </h2>
+<p [style.color]="color"> Change my color by click on below button</p>
+<button (click)="on_change_color()"> Change color </button>
 <hr>
 
-<h2 style="color: blue;">Bootstrap starts</h2>
+<h2 style="color: blue;"> Pass data from parent to child </h2>
+<app-users [var1]="heros"></app-users>
+<hr>
+
+<h2 style="color: blue;"> Pass data from child to parent </h2>
+<app-child (functionVar)="pass_data_from_child_to_parent($event)"></app-child>
+<hr>
+
+<h2 style="color: blue;"> Bootstrap </h2>
 <p>
     <ngb-alert [dismissible]="false">
         <strong>Warning!</strong> Better check yourself, you're not looking too good.
@@ -95,47 +93,43 @@
 
 <div class="btn-group btn-group-toggle">
     <label class="btn-primary" ngbButtonLabel>
-    <input type="checkbox" ngbButton [(ngModel)]="model.left"> Left (pre-checked)
-  </label>
+        <input type="checkbox" ngbButton [(ngModel)]="model.left"> Left (pre-checked)
+    </label>
     <label class="btn-primary" ngbButtonLabel>
-    <input type="checkbox" ngbButton [(ngModel)]="model.middle"> Middle
-  </label>
+        <input type="checkbox" ngbButton [(ngModel)]="model.middle"> Middle
+    </label>
     <label class="btn-primary" ngbButtonLabel>
-    <input type="checkbox" ngbButton [(ngModel)]="model.right"> Right
-  </label>
+        <input type="checkbox" ngbButton [(ngModel)]="model.right"> Right
+    </label>
 </div>
 <hr>
 <pre>{{model | json}}</pre>
-<h2>Bootstrap ends</h2>
 <hr>
 
-<h2 style="color: blue;">Directive starts</h2>
-<h3>This has no color</h3>
-<h3 appCustomStyle>This has green color</h3>
-<h2>Directive ends</h2>
+<h2 style="color: blue;"> Custom style Directive </h2>
+<p> No color </p>
+<p appCustomStyle> Green color from Custom style Directive </p>
 <hr>
 
-<h2 style="color: blue;">Routing starts</h2>
-<a routerLink="users">Go to Users</a>
+<h2 style="color: blue;"> Routing </h2>
+<a routerLink="users"> Go to Users </a>
 <br>
-<a routerLink="child">Go to Child</a>
-<router-outlet></router-outlet>
-<h2>Routing ends</h2>
+<a routerLink="child"> Go to Child </a>
+<router-outlet> </router-outlet>
 <hr>
 
-<h2 style="color: blue;">Pass data in routing starts</h2>
-<a routerLink="details/1">Go to User 1</a>
+<h2 style="color: blue;"> Pass data in routing</h2>
+<a routerLink="details/1"> Go to User 1 </a>
 <br>
-<a routerLink="details/2">Go to User 2</a>
+<a routerLink="details/2"> Go to User 2 </a>
 <br>
-<a routerLink="details/3">Go to User 3</a>
+<a routerLink="details/3"> Go to User 3 </a>
 <br>
-<a routerLink="details/4">Go to User 4</a>
-<router-outlet></router-outlet>
-<h2>Pass data in routing ends</h2>
+<a routerLink="details/4"> Go to User 4 </a>
+<router-outlet> </router-outlet>
 <hr>
 
-<h2 style="color: blue;">Template driven form starts</h2>
+<h2 style="color: blue;"> Template driven Form </h2>
 <!-- <div class="col-sm-6"> -->
 <form #templateDrivenForm="ngForm" (ngSubmit)="onTemplateDrivenFormSubmit(templateDrivenForm.value)">
     <div class="form-group">
@@ -146,52 +140,50 @@
     <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
         <input required #password="ngModel" [ngModel]="user1.password" name="password" type="password" class="form-control" placeholder="Password" minlength="4">
-
         <small *ngIf=" password.invalid && password.touched " class=" error ">Password is invalid</small>
     </div>
-    <button type=" submit " class=" btn btn-primary ">Submit</button>
+    <button type=" submit " class="btn btn-primary"> Submit Template Driven Form </button>
 </form>
 <!-- </div> -->
-<h2>Template driven form ends</h2>
 <hr>
 
-<h2 style=" color: blue; ">Call Get API starts</h2>
+<h2 style="color: blue;"> Call GET API with method </h2>
+<button (click)="callGETAPI()"> Call GET API </button>
 <ul>
-    <li *ngFor=" let post of posts ">{{post.id}} -> {{post.title}}</li>
+    <li *ngFor="let post of posts">{{post.id}} -> {{post.title}}</li>
 </ul>
-<h2>Call Get API ends</h2>
 <hr>
 
-<h2 style=" color: blue; ">Call service method starts</h2>
-<button (click)=" call_service_method() "> Call Service Method </button>
-<h2>Call service method ends</h2>
+<h2 style="color: blue;"> Call service by method </h2>
+<button (click)=" call_service_method() "> Call Service by Method </button>
 <hr>
 
-<h2 style=" color: blue; ">Call API with service starts</h2>
-<button (click)=" call_api_with_service() "> Call API with service </button>
+<h2 style="color: blue;"> Call REST API with service </h2>
+<button (click)="call_api_with_service()"> Call REST API with service </button>
 <ul>
     <li *ngFor=" let postCallAPIWithService of postsCallAPIWithService ">
         {{postCallAPIWithService.id}} -> {{postCallAPIWithService.title}}</li>
 </ul>
-<h2>Call API with service ends</h2>
 <hr>
 
-<h2 style=" color: blue; ">Pipe starts</h2>
-<h3>{{strPipe | uppercase}}</h3>
-<h3>{{datePipe | date}}</h3>
-<h2>Pipe ends</h2>
+<h2 style="color: blue;"> Call Modal With Interface </h2>
+<button (click)=" callModalWithInterface() "> Call Modal With Interface </button>
 <hr>
 
-<h2 style="color: blue;"> Reactive Form starts </h2>
-<form [formGroup]="loginForm" (ngSubmit)="onReactiveFormSubmit()">
+<h2 style=" color: blue; "> Pipes </h2>
+<p> String -> {{strPipe | uppercase}}</p>
+<p> Date -> {{datePipe | date}}</p>
+<hr>
+
+<h2 style="color: blue;"> Reactive Form </h2>
+<form [formGroup]="ReactiveForm" (ngSubmit)="onReactiveFormSubmit()">
     <input formControlName="email" type="email" placeholder="email"> {{email2.invalid}} && {{email2.touched}}
     <small *ngIf="email2.invalid && email2.touched" class="error">Email is required</small>
     <br>
     <input formControlName="password" type="password" placeholder="password">{{password2.invalid}} && {{password2.touched}}
     <small *ngIf="password2.invalid && password2.touched" class="error">Password is required</small>
     <br>
-    <button type="submit" [disabled]="loginForm.invalid"> Submit </button> {{loginForm.invalid}}
+    <button type="submit" [disabled]="ReactiveForm.invalid"> Submit Reactive Form </button> {{ReactiveForm.invalid}}
 </form>
-<h2>Reactive Form ends</h2>
 
 <app-footer></app-footer>

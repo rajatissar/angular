@@ -6,6 +6,7 @@ interface UserType {
   email: string;
   isAlive: boolean;
 }
+
 @Injectable({
   providedIn: 'root'
 })

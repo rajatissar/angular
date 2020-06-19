@@ -19,7 +19,7 @@ export class AppComponent {
   };
   disabled = false;
   showHiddenText = true;
-  color = 'green';
+  color = 'green1';
   persons = [
     { name: 'Rajat', email: 'rajat.kumar@daffodilsw.com' },
     { name: 'Sherlock', email: 'sherlock@daffodilsw.com' }
@@ -38,15 +38,20 @@ export class AppComponent {
     email: 'rajat.kumar@daffodilsw.com',
     password: 123456
   };
-  loginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.pattern('[a-z]')]),
+  ReactiveForm = new FormGroup({
+    email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(8)])
   });
+  url = 'https://jsonplaceholder.typicode.com';
+  url2 = 'http://localhost:3000';
 
   constructor(private http: HttpClient, private userData: UserService, private postData: PostsService, private modalData: ModalService) { }
 
   onInit(): void {
-    this.http.get<[]>('https://jsonplaceholder.typicode.com/posts')
+  }
+
+  callGETAPI() {
+    this.http.get<[]>(`${this.url}/posts`)
       .subscribe((data) => {
         console.log('AppComponent -> ngOnInit -> data', data);
         this.posts = data;
@@ -59,16 +64,14 @@ export class AppComponent {
 
   mouseenter_fun(parm1) {
     alert(parm1);
-    const data1 = this.modalData.getData();
-    console.log('dAppComponent -> data1 ->>', data1);
   }
 
   on_key_press(event) {
     console.log(event.target.value);
   }
 
-  on_submit(item) {
-    alert(item.value);
+  getTextBoxValue(item) {
+    console.log('getTextBoxValue', item.value);
   }
 
   on_form_submit(formData) {
@@ -84,14 +87,14 @@ export class AppComponent {
   }
 
   pass_data_from_child_to_parent(data) {
-    console.log('data from child to parent->', data);
+    console.log('data from child to parent ->>', data);
   }
 
   onTemplateDrivenFormSubmit(data) {
-    console.log('onTemplateDrivenFormSubmit -> data', data);
-    this.http.post('http://localhost:1415/signUp', data)
+    console.log('Template Driven Form Data ->> ', data);
+    this.http.post(`${this.url2}/users`, data)
       .subscribe((result) => {
-        console.log('onTemplateDrivenFormSubmit -> result', result);
+        console.log('Template Driven Form result ->>', result);
       });
   }
 
@@ -107,15 +110,20 @@ export class AppComponent {
       });
   }
 
+  callModalWithInterface() {
+    const data = this.modalData.getData();
+    console.log('Call Modal With Interface ->>', data);
+  }
+
   onReactiveFormSubmit() {
-    console.log('ReactiveForm Data', this.loginForm.value);
+    console.log('ReactiveForm Data', this.ReactiveForm.value);
   }
 
   get email2() {
-    return this.loginForm.get('email');
+    return this.ReactiveForm.get('email');
   }
 
   get password2() {
-    return this.loginForm.get('password');
+    return this.ReactiveForm.get('password');
   }
 }
