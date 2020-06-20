@@ -20,6 +20,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { InputComponent } from './shared/input/input.component';
 
 import { CustomStyleDirective } from './custom-style.directive';
+import { ButtonComponent } from './shared/button/button.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CustomStyleDirective } from './custom-style.directive';
     PageNotFoundComponent,
     UserDetailsComponent,
     CustomStyleDirective,
-    InputComponent
+    InputComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,

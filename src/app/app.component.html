@@ -227,6 +227,9 @@
 <app-input [type]="'text'" [placeholder]="'Enter name'"></app-input>
 <br>
 <app-input [type]="'password'"></app-input>
+<br> {{ReactiveForm.invalid}} <br>
+<app-button [type]="'submit'" [disabled]="false" [buttonName]="'Submit Reactive Form 2'"> </app-button>
+<br>
 <hr>
 
 <app-footer></app-footer>
