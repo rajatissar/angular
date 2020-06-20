@@ -17,6 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ChildComponent } from './child/child.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { InputComponent } from './shared/input/input.component';
 
 import { CustomStyleDirective } from './custom-style.directive';
 
@@ -29,7 +30,8 @@ import { CustomStyleDirective } from './custom-style.directive';
     ChildComponent,
     PageNotFoundComponent,
     UserDetailsComponent,
-    CustomStyleDirective
+    CustomStyleDirective,
+    InputComponent
   ],
   imports: [
     BrowserModule,
