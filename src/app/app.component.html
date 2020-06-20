@@ -210,4 +210,17 @@
 </div>
 <hr>
 
+<h1 style="color: blue;"> Virtual Scroll </h1>
+<div class="container">
+    <button (click)="generateVirtualScroll()"> Generate Virtual Scroll </button>
+    <ul>
+        <cdk-virtual-scroll-viewport style="height: 500px" itemSize="2">
+            <ng-container *cdkVirtualFor="let n of numbers">
+                <li> {{n}} </li>
+            </ng-container>
+        </cdk-virtual-scroll-viewport>
+    </ul>
+</div>
+<hr>
+
 <app-footer></app-footer>

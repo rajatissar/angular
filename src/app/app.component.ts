@@ -48,6 +48,7 @@ export class AppComponent {
   });
   url = 'https://jsonplaceholder.typicode.com';
   url2 = 'http://localhost:3000';
+  numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   @ViewChild('fileUpload', { static: false }) fileUpload: ElementRef; files = [];
 
@@ -185,5 +186,13 @@ export class AppComponent {
       this.uploadFiles();
     };
     fileUpload.click();
+  }
+
+  generateVirtualScroll() {
+    const numbers = [];
+    for (let index = 0; index < 10000; index++) {
+      numbers.push(index);
+    }
+    this.numbers = [...numbers];
   }
 }

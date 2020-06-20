@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { AppRoutingModule } from './app-routing.module';
 import { UsersModule } from './users/users.module';
@@ -39,7 +40,8 @@ import { CustomStyleDirective } from './custom-style.directive';
     AppRoutingModule,
     FormsModule,
     UsersModule,
-    MaterialModule
+    MaterialModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
