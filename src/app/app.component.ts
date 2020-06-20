@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { HttpClient, HttpEventType, HttpErrorResponse } from '@angular/common/http';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
+
 import { UserService } from './user.service';
 import { PostsService } from './posts.service';
 import { ModalService } from './modal.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UploadService } from './upload.service';
 
 @Component({
   selector: 'app-root',
@@ -45,7 +49,15 @@ export class AppComponent {
   url = 'https://jsonplaceholder.typicode.com';
   url2 = 'http://localhost:3000';
 
-  constructor(private http: HttpClient, private userData: UserService, private postData: PostsService, private modalData: ModalService) { }
+  @ViewChild('fileUpload', { static: false }) fileUpload: ElementRef; files = [];
+
+  constructor(
+    private http: HttpClient,
+    private userData: UserService,
+    private postData: PostsService,
+    private modalData: ModalService,
+    private uploadService: UploadService
+  ) { }
 
   onInit(): void {
   }
@@ -125,5 +137,53 @@ export class AppComponent {
 
   get password2() {
     return this.ReactiveForm.get('password');
+  }
+
+  uploadFile(file) {
+    console.log('uploadFile -> file ->>', file);
+    const formData = new FormData();
+    formData.append('file', file.data);
+    file.inProgress = true;
+
+    this.uploadService.upload(formData).pipe(
+      map(event => {
+        switch (event.type) {
+          case HttpEventType.UploadProgress:
+            file.progress = Math.round(event.loaded * 100 / event.total);
+            break;
+          case HttpEventType.Response:
+            return event;
+        }
+      }),
+      catchError((error: HttpErrorResponse) => {
+        file.inProgress = false;
+        return of(`${file.data.name} upload failed.`);
+      }))
+      .subscribe((event: any) => {
+        if (typeof (event) === 'object') {
+          console.log('file_upload result ->>', event.body);
+        }
+      });
+  }
+
+  uploadFiles() {
+    this.fileUpload.nativeElement.value = '';
+    this.files.forEach(file => {
+      this.uploadFile(file);
+    });
+  }
+
+  onImageUpload() {
+    const fileUpload = this.fileUpload.nativeElement;
+    console.log('fileUpload nativeElement ->>', fileUpload);
+    fileUpload.onchange = () => {
+      // tslint:disable-next-line: prefer-for-of
+      for (let index = 0; index < fileUpload.files.length; index++) {
+        const file = fileUpload.files[index];
+        this.files.push({ data: file, inProgress: false, progress: 0 });
+      }
+      this.uploadFiles();
+    };
+    fileUpload.click();
   }
 }
