@@ -32,6 +32,10 @@
 <button (click)="getTextBoxValue(first_name)"> Get textbox value </button>
 <hr>
 
+<h2 style="color: blue;"> Data Binding -> Two way Binding </h2>
+<input type="text" [(ngModel)]="username"> {{username}}
+<hr>
+
 <h2 style="color: blue;"> *ngIf </h2>
 <p *ngIf=showHiddenText> Hidden Text </p>
 <hr>

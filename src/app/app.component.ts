@@ -49,6 +49,7 @@ export class AppComponent {
   url = 'https://jsonplaceholder.typicode.com';
   url2 = 'http://localhost:3000';
   numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  username = 'Rajat';
 
   @ViewChild('fileUpload', { static: false }) fileUpload: ElementRef; files = [];
 
