@@ -61,6 +61,9 @@
 <h3 style="color: green;"> 4. *ngFor </h3>
 <p *ngFor="let person of persons">{{person.name}} -> {{person.email}}</p>
 <hr>
+<h3 style="color: green;"> 5. ngStyle </h3>
+<p [ngStyle]="{'color': 'orange'}"> orange color </p>
+<hr>
 
 <h2 style="color: blue;"> ngForm </h2>
 <form #userForm="ngForm" (ngSubmit)="on_form_submit(userForm.value)">
