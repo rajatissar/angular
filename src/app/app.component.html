@@ -8,21 +8,20 @@
 <app-login></app-login>
 <hr>
 
-<h2 style="color: blue;"> Data Binding > String Interpolation </h2>
+<h2 style="color: blue;"> Data Binding </h2>
+<h3 style="color: green;"> 1. String Interpolation </h3>
 <p> string1 ->> {{string1}} </p>
 <p> array1 ->> {{array1}} </p>
 <p> array1[0] ->> {{array1[0]}} </p>
 <p> object ->> {{object1 | json}} </p>
 <p> title ->> {{this.getTitle()}}</p>
 <hr>
-
-<h2 style="color: blue;"> Data Binding -> Property Binding </h2>
+<h3 style="color: green;"> 2. Property Binding </h3>
 <input type="text" disabled={{disabled}}> Without Property Binding
 <br>
 <input type="text" [disabled]=disabled> With Property Binding
 <hr>
-
-<h2 style="color: blue;"> Data Binding -> Event Binding </h2>
+<h3 style="color: green;"> 3. Event Binding </h3>
 <button (click)="click_fun('hello from click function')"> click event binding </button>
 <br>
 <button (mouseenter)="mouseenter_fun('hello from mouseenter function')"> mouseenter event binding</button>
@@ -31,37 +30,35 @@
 <br>
 <button (click)="getTextBoxValue(first_name)"> Get textbox value </button>
 <hr>
-
-<h2 style="color: blue;"> Data Binding -> Two way Binding </h2>
+<h3 style="color: green;"> 4. Two way Binding </h3>
+<br>
 <input type="text" [(ngModel)]="username"> {{username}}
+<br>
+<button type="button" [disabled]="!username"> Username </button>
 <hr>
 
-<h2 style="color: blue;"> *ngIf </h2>
+<h2 style="color: blue;"> Directive </h2>
+<h3 style="color: green;"> 1. *ngIf </h3>
 <p *ngIf=showHiddenText> Hidden Text </p>
 <hr>
-
-<h2 style="color: blue;"> *ngIf if/else</h2>
+<h3 style="color: green;"> 2. *ngIf if/else</h3>
 <p *ngIf="showHiddenText; then if_block else else_block"></p>
 <p *ngIf="showHiddenText && title=='youtube1' then if_block else else_block"></p>
-
 <ng-template #if_block>
     <p> If Block </p>
 </ng-template>
 <ng-template #else_block>
     <p> Else Block </p>
 </ng-template>
-
 <hr>
-
-<h2 style="color: blue;"> *ngSwitch </h2>
+<h3 style="color: green;"> 3. *ngSwitch </h3>
 <div [ngSwitch]="color">
     <p *ngSwitchCase="'yellow'" style="color: yellow"> Yellow color</p>
     <p *ngSwitchCase="'green'" style="color: green;"> Green color</p>
     <p *ngSwitchDefault style="color: red;"> Red color</p>
 </div>
 <hr>
-
-<h2 style="color: blue;"> *ngFor </h2>
+<h3 style="color: green;"> 4. *ngFor </h3>
 <p *ngFor="let person of persons">{{person.name}} -> {{person.email}}</p>
 <hr>
 
