@@ -8,28 +8,28 @@
 <app-login></app-login>
 <hr>
 
-<h2 style="color: blue;"> Interpolation </h2>
+<h2 style="color: blue;"> Data Binding > String Interpolation </h2>
 <p> string1 ->> {{string1}} </p>
 <p> array1 ->> {{array1}} </p>
 <p> array1[0] ->> {{array1[0]}} </p>
+<p> object ->> {{object1 | json}} </p>
+<p> title ->> {{this.getTitle()}}</p>
 <hr>
 
-<h2 style="color: blue;"> Function call </h2>
-<button (click)="click_fun('hello from click function')"> click me </button>
-<br>
-<button (mouseenter)="mouseenter_fun('hello from mouseenter function')"> On hover (mouseenter)</button>
-<hr>
-
-<h2 style="color: blue;"> Get textbox value</h2>
-<input type="text" #first_name (keyup)="on_key_press($event)">
-<br>
-<button (click)="getTextBoxValue(first_name)">Submit</button>
-<hr>
-
-<h2 style="color: blue;"> Property Binding </h2>
+<h2 style="color: blue;"> Data Binding -> Property Binding </h2>
 <input type="text" disabled={{disabled}}> Without Property Binding
 <br>
 <input type="text" [disabled]=disabled> With Property Binding
+<hr>
+
+<h2 style="color: blue;"> Data Binding -> Event Binding </h2>
+<button (click)="click_fun('hello from click function')"> click event binding </button>
+<br>
+<button (mouseenter)="mouseenter_fun('hello from mouseenter function')"> mouseenter event binding</button>
+<br>
+<input type="text" #first_name (keyup)="on_key_press($event)" placeholder="keyup event binding">
+<br>
+<button (click)="getTextBoxValue(first_name)"> Get textbox value </button>
 <hr>
 
 <h2 style="color: blue;"> *ngIf </h2>

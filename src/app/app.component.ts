@@ -63,24 +63,28 @@ export class AppComponent {
   onInit(): void {
   }
 
+  getTitle() {
+    return this.title;
+  }
+
   callGETAPI() {
     this.http.get<[]>(`${this.url}/posts`)
       .subscribe((data) => {
-        console.log('AppComponent -> ngOnInit -> data', data);
+        console.log('callGETAPI data ->>', data);
         this.posts = data;
       });
   }
 
   click_fun(parm1) {
-    alert(parm1);
+    console.log('click_fun ->>', parm1);
   }
 
   mouseenter_fun(parm1) {
-    alert(parm1);
+    console.log('mouseenter_fun ->>', parm1);
   }
 
   on_key_press(event) {
-    console.log(event.target.value);
+    console.log('on_key_press', event.target.value);
   }
 
   getTextBoxValue(item) {

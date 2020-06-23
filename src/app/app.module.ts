@@ -6,10 +6,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
+// modules
 import { AppRoutingModule } from './app-routing.module';
 import { UsersModule } from './users/users.module';
 import { MaterialModule } from './modules/material/material.module';
-
+// components
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { HeaderComponent } from './header/header.component';
@@ -18,9 +19,9 @@ import { ChildComponent } from './child/child.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { InputComponent } from './shared/input/input.component';
-
-import { CustomStyleDirective } from './custom-style.directive';
 import { ButtonComponent } from './shared/button/button.component';
+// directive
+import { CustomStyleDirective } from './custom-style.directive';
 
 @NgModule({
   declarations: [
@@ -31,9 +32,9 @@ import { ButtonComponent } from './shared/button/button.component';
     ChildComponent,
     PageNotFoundComponent,
     UserDetailsComponent,
-    CustomStyleDirective,
     InputComponent,
-    ButtonComponent
+    ButtonComponent,
+    CustomStyleDirective,
   ],
   imports: [
     BrowserModule,
