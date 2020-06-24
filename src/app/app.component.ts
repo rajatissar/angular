@@ -50,6 +50,7 @@ export class AppComponent {
   url2 = 'http://localhost:3000';
   numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   username = 'Rajat';
+  dataFromChildToParent: string;
 
   @ViewChild('fileUpload', { static: false }) fileUpload: ElementRef; files = [];
 
@@ -106,6 +107,7 @@ export class AppComponent {
 
   pass_data_from_child_to_parent(data) {
     console.log('data from child to parent ->>', data);
+    this.dataFromChildToParent = data;
   }
 
   onTemplateDrivenFormSubmit(data) {
@@ -199,5 +201,9 @@ export class AppComponent {
       numbers.push(index);
     }
     this.numbers = [...numbers];
+  }
+
+  updateHeroes() {
+    this.heros.push('new hero');
   }
 }

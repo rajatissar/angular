@@ -21,6 +21,9 @@
 <br>
 <input type="text" [disabled]=disabled> With Property Binding
 <hr>
+<button (click)="on_change_color()"> Change below paragraph style.color on click </button>
+<p [style.color]="color"> style property binding </p>
+<hr>
 <h3 style="color: green;"> 3. Event Binding </h3>
 <button (click)="click_fun('hello from click function')"> click event binding </button>
 <br>
@@ -35,6 +38,16 @@
 <input type="text" [(ngModel)]="username"> {{username}}
 <br>
 <button type="button" [disabled]="!username"> Username </button>
+<hr>
+
+<h2 style="color: blue;"> Pass data from parent to child (custom property binding) </h2>
+<button type="button" (click)="updateHeroes()"> Update Heros </button>
+<app-users [var1]="heros"></app-users>
+<hr>
+
+<h2 style="color: blue;"> Pass data from child to parent (custom event binding) </h2>
+<app-child (functionVar)="pass_data_from_child_to_parent($event)"></app-child>
+<p> data from child to parent ->> {{dataFromChildToParent | json}}</p>
 <hr>
 
 <h2 style="color: blue;"> Directive </h2>
@@ -76,19 +89,6 @@
     <input ngModel type="text" placeholder="Your contact number" name="contact"><br>
     <button type="submit"> Submit Form </button>
 </form>
-<hr>
-
-<h2 style="color: blue;"> Dynamic style </h2>
-<p [style.color]="color"> Change my color by click on below button</p>
-<button (click)="on_change_color()"> Change color </button>
-<hr>
-
-<h2 style="color: blue;"> Pass data from parent to child </h2>
-<app-users [var1]="heros"></app-users>
-<hr>
-
-<h2 style="color: blue;"> Pass data from child to parent </h2>
-<app-child (functionVar)="pass_data_from_child_to_parent($event)"></app-child>
 <hr>
 
 <h2 style="color: blue;"> Bootstrap </h2>
