@@ -54,6 +54,7 @@ export class AppComponent {
   numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   username = 'Rajat';
   dataFromChildToParent: string;
+  dataFromChildToParent2: string;
 
 
   constructor(
@@ -109,7 +110,11 @@ export class AppComponent {
 
   pass_data_from_child_to_parent(data) {
     console.log('data from child to parent ->>', data);
-    this.dataFromChildToParent = data;
+    this.dataFromChildToParent = JSON.parse(JSON.stringify(data));
+  }
+
+  passDataFromChildToParent2(data) {
+    this.dataFromChildToParent2 = JSON.parse(JSON.stringify(data));
   }
 
   onViewChild() {

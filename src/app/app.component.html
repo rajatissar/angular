@@ -45,9 +45,11 @@
 <app-users [var1]="heros"></app-users>
 <hr>
 
-<h2 style="color: blue;"> Pass data from child to parent (custom event binding) </h2>
-<app-child (functionVar)="pass_data_from_child_to_parent($event)"></app-child>
+<h2 style="color: blue;"> Pass data from child to parent (custom event binding) & child1 to child2</h2>
+<app-child (functionVar)="pass_data_from_child_to_parent($event)" (functionVar2)="passDataFromChildToParent2($event)">
+</app-child>
 <p> data from child to parent ->> {{dataFromChildToParent | json}}</p>
+<app-child2 [var2]="dataFromChildToParent2"> </app-child2>
 <hr>
 
 <h2 style="color: blue;"> Directive </h2>
