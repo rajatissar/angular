@@ -20,6 +20,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { InputComponent } from './shared/input/input.component';
 import { ButtonComponent } from './shared/button/button.component';
+import { Child2Component } from './child2/child2.component';
 // directive
 import { CustomStyleDirective } from './custom-style.directive';
 
@@ -34,6 +35,7 @@ import { CustomStyleDirective } from './custom-style.directive';
     UserDetailsComponent,
     InputComponent,
     ButtonComponent,
+    Child2Component,
     CustomStyleDirective,
   ],
   imports: [

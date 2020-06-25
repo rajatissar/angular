@@ -80,7 +80,12 @@
 <h3 style="color: green;"> 5. ngClass </h3>
 <p [ngClass]="{'class1':true}"> orange color </p>
 <hr>
-<h3 style="color: green;"> 6. Custom style Directive </h3>
+<h3 style="color: green;"> 6. ngContent </h3>
+<app-child2>
+    <p> This will get embed in child2 component by ng-content directive </p>
+</app-child2>
+<hr>
+<h3 style="color: green;"> 7. Custom style Directive </h3>
 <p> No color (Default behavior) </p>
 <p appCustomStyle> Green color from Custom style Directive </p>
 <hr>
@@ -94,6 +99,12 @@
     <button type="submit"> Submit Form </button>
 </form>
 <hr>
+
+<h2 style="color: blue;"> @ViewChild </h2>
+<input #input1 type="text">
+<br>
+<button (click)="onViewChild()"> View input value </button>
+<br>
 
 <h2 style="color: blue;"> Bootstrap </h2>
 <p>

@@ -15,7 +15,10 @@ import { UploadService } from './upload.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'youtube';
+  @ViewChild('input1') input1: ElementRef;
+  @ViewChild('fileUpload', { static: false }) fileUpload: ElementRef; files = [];
+
+  title = 'Angular';
   string1 = 'Rajat';
   array1 = [1, 2, 3, 4];
   object1 = {
@@ -52,7 +55,6 @@ export class AppComponent {
   username = 'Rajat';
   dataFromChildToParent: string;
 
-  @ViewChild('fileUpload', { static: false }) fileUpload: ElementRef; files = [];
 
   constructor(
     private http: HttpClient,
@@ -108,6 +110,10 @@ export class AppComponent {
   pass_data_from_child_to_parent(data) {
     console.log('data from child to parent ->>', data);
     this.dataFromChildToParent = data;
+  }
+
+  onViewChild() {
+    console.log('onViewChild ->>', this.input1.nativeElement.value);
   }
 
   onTemplateDrivenFormSubmit(data) {
