@@ -211,5 +211,6 @@ export class AppComponent {
 
   updateHeroes() {
     this.heros.push('new hero');
+    this.heros = this.heros.slice();
   }
 }

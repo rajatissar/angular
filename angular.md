@@ -95,7 +95,8 @@ Decorator always starts with **@** like @Component
 
 ### 2. Modal
 
-Modal is data structure of your application or service.
+* Modal is data structure of your application or service.
+* MOdel are blueprint for object what we create.
 
 ## 4. Terminology (Angular)
 
@@ -188,9 +189,16 @@ Event binding lets your app respond to user input in the target environment by u
 
 ### 8. Life cycle
 
-```TEXT
-OnChange() – OnInit() – DoCheck() – AfterContentInit() – AfterContentChecked() – AfterViewInit() – AfterViewChecked() – OnDestroy().
-```
+| Method name             | Description                                                                |
+|-------------------------|----------------------------------------------------------------------------|
+| ngOnChanges()           | Called after a bound input property change                                 |
+| ngOnInit()              | Called once the component is initialized                                   |
+| ngDoCheck()             | Called during every change detection run                                   |
+| ngAfterContentInit()    | Called after content (ng-content) has been projected into view             |
+| ngAfterContentChecked() | Called every time the projected content has been checked                   |
+| ngAfterViewInit()       | Called every time the component view (and child view) has been initialized |
+| ngAfterViewChecked()    | Called after the component view (and child view) have been checked         |
+| ngOnDestroy()           | Called once the component is about to be destroyed                         |
 
 ### 9. Form
 
@@ -205,3 +213,12 @@ OnChange() – OnInit() – DoCheck() – AfterContentInit() – AfterContentChe
 * formControlName
 
 ### 10. Observables
+
+## 6. TODO
+
+* Pass data between siblings component
+* Use two router-outlet in single HTML page.
+* Pass Data in params of router -> why component gets render only first time not every time
+* File upload in more detail
+
+### Topics to study
