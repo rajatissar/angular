@@ -14,6 +14,7 @@ import { UploadService } from './upload.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   @ViewChild('input1') input1: ElementRef;
   @ViewChild('fileUpload', { static: false }) fileUpload: ElementRef; files = [];
@@ -51,7 +52,7 @@ export class AppComponent {
   });
   url = 'https://jsonplaceholder.typicode.com';
   url2 = 'http://localhost:3000';
-  numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  numbers: number[] = [];
   username = 'Rajat';
   dataFromChildToParent: string;
   dataFromChildToParent2: string;
