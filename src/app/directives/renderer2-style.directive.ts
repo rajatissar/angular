@@ -4,7 +4,8 @@ import {
   ElementRef,
   Renderer2,
   HostListener,
-  HostBinding
+  HostBinding,
+  Input
 } from '@angular/core';
 
 @Directive({
@@ -12,23 +13,25 @@ import {
 })
 
 export class Renderer2StyleDirective implements OnInit {
-  @HostBinding('style.color') color = 'yellow';
+  @Input() defaultColor = 'yellow';
+  @Input() highlightColor = 'red';
+  @HostBinding('style.color') color: string;
 
   constructor(private elRef: ElementRef, private renderer: Renderer2) {
   }
 
   ngOnInit() {
     // this.renderer.setStyle(this.elRef.nativeElement, 'color', 'yellow');
-    // this.color = 'yellow';
+    this.color = this.defaultColor;
   }
 
   @HostListener('mouseenter') mouseenter(eventData: Event) {
-    this.renderer.setStyle(this.elRef.nativeElement, 'color', 'red');
-    this.color = 'red';
+    // this.renderer.setStyle(this.elRef.nativeElement, 'color', 'red');
+    this.color = this.highlightColor;
   }
 
   @HostListener('mouseleave') mouseleave(eventData: Event) {
-    this.renderer.setStyle(this.elRef.nativeElement, 'color', 'yellow');
-    this.color = 'yellow';
+    // this.renderer.setStyle(this.elRef.nativeElement, 'color', 'yellow');
+    this.color = this.defaultColor;
   }
 }
