@@ -6,10 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
-// modules
-import { AppRoutingModule } from './app-routing.module';
-import { UsersModule } from './users/users.module';
-import { MaterialModule } from './modules/material/material.module';
 // components
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
@@ -21,8 +17,12 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { InputComponent } from './shared/input/input.component';
 import { ButtonComponent } from './shared/button/button.component';
 import { Child2Component } from './child2/child2.component';
-// directive
-import { CustomStyleDirective } from './custom-style.directive';
+// directives
+import { CustomStyleDirective } from './directives/custom-style.directive';
+// modules
+import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from './modules/material/material.module';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [

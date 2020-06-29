@@ -4,10 +4,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
-import { UserService } from './user.service';
-import { PostsService } from './posts.service';
-import { ModalService } from './modal.service';
-import { UploadService } from './upload.service';
+// services
+import { UserService } from './services/user.service';
+import { PostsService } from './services/posts.service';
+import { ModalService } from './services/modal.service';
+import { UploadService } from './services/upload.service';
 
 @Component({
   selector: 'app-root',

@@ -10,6 +10,7 @@ interface UserType {
 @Injectable({
   providedIn: 'root'
 })
+
 export class ModalService {
 
   constructor() { }
