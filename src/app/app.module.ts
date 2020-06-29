@@ -19,6 +19,7 @@ import { ButtonComponent } from './shared/button/button.component';
 import { Child2Component } from './child2/child2.component';
 // directives
 import { CustomStyleDirective } from './directives/custom-style.directive';
+import { Renderer2StyleDirective } from './directives/renderer2-style.directive';
 // modules
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './modules/material/material.module';
@@ -37,6 +38,7 @@ import { UsersModule } from './users/users.module';
     ButtonComponent,
     Child2Component,
     CustomStyleDirective,
+    Renderer2StyleDirective,
   ],
   imports: [
     BrowserModule,
