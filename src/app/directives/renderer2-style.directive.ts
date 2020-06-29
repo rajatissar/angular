@@ -2,7 +2,8 @@ import {
   Directive,
   OnInit,
   ElementRef,
-  Renderer2
+  Renderer2,
+  HostListener
 } from '@angular/core';
 
 @Directive({
@@ -15,6 +16,14 @@ export class Renderer2StyleDirective implements OnInit {
   }
 
   ngOnInit() {
+    this.renderer.setStyle(this.elRef.nativeElement, 'color', 'yellow');
+  }
+
+  @HostListener('mouseenter') mouseenter(eventData: Event) {
+    this.renderer.setStyle(this.elRef.nativeElement, 'color', 'red');
+  }
+
+  @HostListener('mouseleave') mouseleave(eventData: Event) {
     this.renderer.setStyle(this.elRef.nativeElement, 'color', 'yellow');
   }
 }
