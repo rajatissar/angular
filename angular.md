@@ -115,14 +115,15 @@ Decorator always starts with **@** like @Component
 * Directives are instructions in the DOM.
 * Directives are extended HTML attributes with the prefix n
 * Types of directive:-
-  * structural directive e.g. *ngIf
-  * attribute directive e.g. ngModel
+  * structural directive e.g. `*ngIf, *ngFor, *ngSwitch`
+  * attribute directive e.g. `ngModel, ngClass, ngStyle`
+  * component directive e.g. `customDirective`
 
 ### 3. Services
 
 * For data or logic that isn't associated with a specific view, and that you want to share across components, you create a service class. A service class definition is immediately preceded by the @Injectable() decorator. The decorator provides the metadata that allows other providers to be injected as dependencies into your class.
 * Dependency injection (DI) lets you keep your component classes lean and efficient. They don't fetch data from the server, validate user input, or log directly to the console; they delegate such tasks to services.
-* Service is a singleton classes that should be instantiated only once in a angular application.
+* Service is a singleton objects in Angular that get instantiated only once during the lifetime of an application are called services.
 * Services are not modal and component dependent.
 * Service is used for
   * share common data
@@ -147,7 +148,8 @@ bootstrap -> component to render in index.html file
 
 ### 7. Data Binding
 
-Communication between TypeScript Code (Business Logic) and HTML(Template) of component
+The mechanism by which parts of a template coordinates with parts of a component is known as data binding.
+Communication between TypeScript Code (Business Logic) and HTML(Template) of component.
 
 > String Interpolation
 
@@ -189,16 +191,16 @@ Event binding lets your app respond to user input in the target environment by u
 
 ### 8. Life cycle
 
-| Method name             | Description                                                                |
-|-------------------------|----------------------------------------------------------------------------|
-| ngOnChanges()           | Called after a bound input property change                                 |
-| ngOnInit()              | Called once the component is initialized                                   |
-| ngDoCheck()             | Called during every change detection run                                   |
-| ngAfterContentInit()    | Called after content (ng-content) has been projected into view             |
-| ngAfterContentChecked() | Called every time the projected content has been checked                   |
-| ngAfterViewInit()       | Called every time the component view (and child view) has been initialized |
-| ngAfterViewChecked()    | Called after the component view (and child view) have been checked         |
-| ngOnDestroy()           | Called once the component is about to be destroyed                         |
+| Sr No | Method name             | Description                                                                |
+|-------|-------------------------|----------------------------------------------------------------------------|
+| 1     | ngOnChanges()           | Called after a bound input property change                                 |
+| 2     | ngOnInit()              | Called once the component is initialized                                   |
+| 3     | ngDoCheck()             | Called during every change detection run                                   |
+| 4     | ngAfterContentInit()    | Called after content (ng-content) has been projected into view             |
+| 5     | ngAfterContentChecked() | Called every time the projected content has been checked                   |
+| 6     | ngAfterViewInit()       | Called every time the component view (and child view) has been initialized |
+| 7     | ngAfterViewChecked()    | Called after the component view (and child view) have been checked         |
+| 8     | ngOnDestroy()           | Called once the component is about to be destroyed                         |
 
 ### 9. Form
 

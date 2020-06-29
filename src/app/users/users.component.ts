@@ -28,6 +28,7 @@ export class UsersComponent implements
   OnDestroy {
 
   @Input() var1;
+  var2 = 'Rajat';
 
   constructor() {
     console.log('>>LC<< constructor called');
