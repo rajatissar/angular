@@ -211,12 +211,16 @@
 <hr>
 
 <h2 style="color: blue;"> File upload with material UI </h2>
+<h3 *ngIf="uploadedImages.length"> Preview Images </h3>
+<div *ngFor="let uploadedImage of uploadedImages">
+    <img [src]="uploadedImage" style="max-height: 200px; max-width: 300px">
+</div>
 <div style="text-align:center;">
     <mat-card style="margin-top:10px; width: 50%; background-color: lightblue">
         <mat-card-content>
             <ul>
                 <li *ngFor="let file of files">
-                    <mat-progress-bar [value]="file.progress"></mat-progress-bar>
+                    <mat-progress-bar [value]="file.progress" style="margin: 8px"></mat-progress-bar>
                     <span id="file-label">
                     </span>
                 </li>

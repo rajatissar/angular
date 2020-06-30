@@ -18,7 +18,10 @@ import { UploadService } from './services/upload.service';
 
 export class AppComponent {
   @ViewChild('input1') input1: ElementRef;
-  @ViewChild('fileUpload', { static: false }) fileUpload: ElementRef; files = [];
+  @ViewChild('fileUpload', { static: false }) fileUpload: ElementRef;
+
+  files = [];
+  uploadedImages = [];
 
   title = 'Angular';
   string1 = 'Rajat';
@@ -183,6 +186,7 @@ export class AppComponent {
       .subscribe((event: any) => {
         if (typeof (event) === 'object') {
           console.log('file_upload result ->>', event.body);
+          this.uploadedImages = [...this.uploadedImages, event.body.link];
         }
       });
   }
@@ -205,6 +209,7 @@ export class AppComponent {
       }
       this.uploadFiles();
     };
+    this.files = [];
     fileUpload.click();
   }
 
