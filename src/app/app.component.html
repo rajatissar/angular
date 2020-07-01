@@ -175,6 +175,11 @@
 <button (click)=" callModalWithInterface() "> Call Modal With Interface </button>
 <hr>
 
+<h1 style="color: blue;"> Manage data using service </h1>
+<app-active-users></app-active-users>
+<app-inactive-users></app-inactive-users>
+<hr>
+
 <h2 style=" color: blue; "> Pipes </h2>
 <p> String -> {{strPipe | uppercase}}</p>
 <p> Date -> {{datePipe | date}}</p>
@@ -241,7 +246,7 @@
 <div class="container">
     <button (click)="generateVirtualScroll()"> Generate Virtual Scroll </button>
     <ul>
-        <cdk-virtual-scroll-viewport style="height: 500px" itemSize="2">
+        <cdk-virtual-scroll-viewport style="height: 500px; width:500px" itemSize="2">
             <ng-container *cdkVirtualFor="let n of numbers">
                 <li> {{n}} </li>
             </ng-container>

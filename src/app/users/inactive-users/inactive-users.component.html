@@ -1,0 +1,8 @@
+<h3> Inactive Users </h3>
+<ul>
+    <li *ngFor="let user of inactiveUsers; let id = index">
+        {{user}}
+        <button (click)="setActive(id)"> Set Active </button>
+    </li>
+</ul>
+<p *ngIf="!inactiveUsers.length"> No Inactive User </p>
