@@ -77,14 +77,6 @@ export class AppComponent {
     return this.title;
   }
 
-  callGETAPI() {
-    this.http.get<[]>(`${this.url}/posts`)
-      .subscribe((data) => {
-        console.log('callGETAPI data ->>', data);
-        this.posts = data;
-      });
-  }
-
   click_fun(parm1) {
     console.log('click_fun ->>', parm1);
   }
@@ -134,21 +126,30 @@ export class AppComponent {
       });
   }
 
-  call_service_method() {
+  // service methods
+  callServiceMethod() {
     this.userData.get_data('Data from component to service');
   }
 
-  call_api_with_service() {
-    this.postData.getPosts()
-      .subscribe((result) => {
-        console.log('call_api_with_service -> result ->>', result);
-        this.postsCallAPIWithService = result;
+  callServiceMethodWithInterface() {
+    const data = this.modalData.getData();
+    console.log('callGETAPIWithoutUsingService ->>', data);
+  }
+
+  callGETAPIWithoutUsingService() {
+    this.http.get<[]>(`${this.url}/posts`)
+      .subscribe((data) => {
+        console.log('callGETAPIWithoutUsingService data ->>', data);
+        this.posts = data;
       });
   }
 
-  callModalWithInterface() {
-    const data = this.modalData.getData();
-    console.log('Call Modal With Interface ->>', data);
+  callRESTAPIByUsingService() {
+    this.postData.getPosts()
+      .subscribe((result) => {
+        console.log('callRESTAPIByUsingService -> result ->>', result);
+        this.postsCallAPIWithService = result;
+      });
   }
 
   onReactiveFormSubmit() {
