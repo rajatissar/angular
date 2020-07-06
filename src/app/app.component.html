@@ -1,10 +1,10 @@
 <app-header></app-header>
 <hr>
 
-<h2 style="color: green;"> App component </h2>
+<h2 style="color: blue;"> App component </h2>
 <hr>
 
-<h2 style="color: blue;"> Showing component (Login) by module </h2>
+<h2 style="color: blue;"> Showing Login component by using module </h2>
 <app-login></app-login>
 <hr>
 
@@ -21,15 +21,15 @@
 <br>
 <input type="text" [disabled]=disabled> With Property Binding
 <hr>
-<button (click)="on_change_color()"> Change below paragraph style.color on click </button>
+<button (click)="changeColor()"> Change below paragraph style.color on click </button>
 <p [style.color]="color"> style property binding </p>
 <hr>
 <h3 style="color: green;"> 3. Event Binding </h3>
-<button (click)="click_fun('hello from click function')"> click event binding </button>
+<button (click)="clickEventBinding('hello from click function')"> click event binding </button>
 <br>
-<button (mouseenter)="mouseenter_fun('hello from mouseenter function')"> mouseenter event binding</button>
+<button (mouseenter)="mouseenterEventBinding('hello from mouseenter function')"> mouseenter event binding</button>
 <br>
-<input type="text" #first_name (keyup)="on_key_press($event)" placeholder="keyup event binding">
+<input type="text" #first_name (keyup)="keyupEventBinding($event)" placeholder="keyup event binding">
 <br>
 <button (click)="getTextBoxValue(first_name)"> Get textbox value </button>
 <hr>
@@ -40,13 +40,13 @@
 <button type="button" [disabled]="!username"> Username </button>
 <hr>
 
-<h2 style="color: blue;"> Pass data from parent to child (custom property binding) </h2>
+<h3 style="color: green;"> 5. Pass data from parent to child (custom property binding) </h3>
 <button type="button" (click)="updateHeroes()"> Update Heros </button>
 <app-users [var1]="heros"></app-users>
 <hr>
 
-<h2 style="color: blue;"> Pass data from child to parent (custom event binding) & child1 to child2</h2>
-<app-child (functionVar)="pass_data_from_child_to_parent($event)" (functionVar2)="passDataFromChildToParent2($event)">
+<h3 style="color: green;"> 6. Pass data from child to parent (custom event binding) & child1 to child2</h3>
+<app-child (functionVar)="passDataFromChildToParent($event)" (functionVar2)="passDataFromChildToParent2($event)">
 </app-child>
 <p> data from child to parent ->> {{dataFromChildToParent | json}}</p>
 <app-child2 [var2]="dataFromChildToParent2"> </app-child2>
@@ -96,48 +96,10 @@
 <p appRenderer2Style [defaultColor]="'orange'" [highlightColor]="'blue'"> Orange color from Renderer2 Directive </p>
 <hr>
 
-<h2 style="color: blue;"> ngForm </h2>
-<form #userForm="ngForm" (ngSubmit)="on_form_submit(userForm.value)">
-    <input ngModel type="text" placeholder="Your first name" name="first_name"><br>
-    <input ngModel type="text" placeholder="Your last name" name="last_name"><br>
-    <input ngModel type="text" placeholder="Your email" name="email"><br>
-    <input ngModel type="text" placeholder="Your contact number" name="contact"><br>
-    <button type="submit"> Submit Form </button>
-</form>
-<hr>
-
-<h2 style="color: blue;"> @ViewChild </h2>
-<input #input1 type="text">
-<br>
-<button (click)="onViewChild()"> View input value </button>
-<br>
-
-<h2 style="color: blue;"> Bootstrap </h2>
-<p>
-    <ngb-alert [dismissible]="false">
-        <strong>Warning!</strong> Better check yourself, you're not looking too good.
-    </ngb-alert>
-</p>
-
-<div class="btn-group btn-group-toggle">
-    <label class="btn-primary" ngbButtonLabel>
-        <input type="checkbox" ngbButton [(ngModel)]="model.left"> Left (pre-checked)
-    </label>
-    <label class="btn-primary" ngbButtonLabel>
-        <input type="checkbox" ngbButton [(ngModel)]="model.middle"> Middle
-    </label>
-    <label class="btn-primary" ngbButtonLabel>
-        <input type="checkbox" ngbButton [(ngModel)]="model.right"> Right
-    </label>
-</div>
-<hr>
-<pre>{{model | json}}</pre>
-<hr>
-
 <h2 style="color: blue;"> Routing </h2>
 <a routerLink="users"> Go to Users </a> <br>
 <a routerLink="child"> Go to Child </a> <br>
-<h3 style="color: green;"> Pass data in routing </h3>
+<h3 style="color: green;"> 1. Pass data in routing </h3>
 <a routerLink="details/1/rajat" [queryParams]="{'lastName': 'kumar', 'email': 'rajat@test.com'}" fragment="fragment1">
     Go to User 1
 </a>
@@ -147,7 +109,7 @@
 <a routerLink="details/4/shubham"> Go to User 4 </a> <br>
 <router-outlet> </router-outlet>
 <br>
-<h3 style="color: green;"> Nested Routing </h3>
+<h3 style="color: green;"> 2. Nested Routing </h3>
 <a routerLink="nested-route/1">
     Nested Route 1
 </a>
@@ -192,7 +154,45 @@
 <p> Date -> {{datePipe | date}}</p>
 <hr>
 
-<h2 style="color: blue;"> Template driven Form </h2>
+<h2 style="color: blue;"> @ViewChild </h2>
+<input #input1 type="text">
+<br>
+<button (click)="onViewChild()"> View input value </button>
+<hr>
+
+<h2 style="color: blue;"> Bootstrap </h2>
+<p>
+    <ngb-alert [dismissible]="false">
+        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+    </ngb-alert>
+</p>
+<div class="btn-group btn-group-toggle">
+    <label class="btn-primary" ngbButtonLabel>
+        <input type="checkbox" ngbButton [(ngModel)]="model.left"> Left (pre-checked)
+    </label>
+    <label class="btn-primary" ngbButtonLabel>
+        <input type="checkbox" ngbButton [(ngModel)]="model.middle"> Middle
+    </label>
+    <label class="btn-primary" ngbButtonLabel>
+        <input type="checkbox" ngbButton [(ngModel)]="model.right"> Right
+    </label>
+</div>
+<hr>
+<pre>{{model | json}}</pre>
+<hr>
+
+<h2 style="color: blue;"> Form </h2>
+<h3 style="color: green;"> 1. ngForm </h3>
+<form #userForm="ngForm" (ngSubmit)="onNGFormSubmit(userForm.value)">
+    <input ngModel type="text" placeholder="Your first name" name="first_name"><br>
+    <input ngModel type="text" placeholder="Your last name" name="last_name"><br>
+    <input ngModel type="text" placeholder="Your email" name="email"><br>
+    <input ngModel type="text" placeholder="Your contact number" name="contact"><br>
+    <button type="submit"> Submit Form </button>
+</form>
+<hr>
+
+<h3 style="color: green;"> 2. Template driven Form </h3>
 <!-- <div class="col-sm-6"> -->
 <form #templateDrivenForm="ngForm" (ngSubmit)="onTemplateDrivenFormSubmit(templateDrivenForm.value)">
     <div class="form-group">
@@ -210,7 +210,7 @@
 <!-- </div> -->
 <hr>
 
-<h2 style="color: blue;"> Reactive Form </h2>
+<h3 style="color: green;"> 3. Reactive Form </h3>
 <form [formGroup]="ReactiveForm" (ngSubmit)="onReactiveFormSubmit()">
     <input formControlName="email" type="email" placeholder="email"> {{email2.invalid}} && {{email2.touched}}
     <small *ngIf="email2.invalid && email2.touched" class="error">Email is required</small>
@@ -222,7 +222,7 @@
 </form>
 <hr>
 
-<h2 style="color: blue;"> File upload with material UI </h2>
+<h2 style="color: blue;"> File upload </h2>
 <h3 *ngIf="uploadedImages.length"> Preview Images </h3>
 <div *ngFor="let uploadedImage of uploadedImages">
     <img [src]="uploadedImage" style="max-height: 200px; max-width: 300px">

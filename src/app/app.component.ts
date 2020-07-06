@@ -77,27 +77,23 @@ export class AppComponent {
     return this.title;
   }
 
-  click_fun(parm1) {
-    console.log('click_fun ->>', parm1);
+  clickEventBinding(param1: string) {
+    console.log('clickEventBinding ->>', param1);
   }
 
-  mouseenter_fun(parm1) {
-    console.log('mouseenter_fun ->>', parm1);
+  mouseenterEventBinding(param1: string) {
+    console.log('mouseenterEventBinding ->>', param1);
   }
 
-  on_key_press(event) {
-    console.log('on_key_press', event.target.value);
+  keyupEventBinding(event) {
+    console.log('keyupEventBinding ->>', event.target.value);
   }
 
   getTextBoxValue(item) {
-    console.log('getTextBoxValue', item.value);
+    console.log('getTextBoxValue ->>', item.value);
   }
 
-  on_form_submit(formData) {
-    console.log('formData', formData);
-  }
-
-  on_change_color() {
+  changeColor() {
     if (this.color === 'green') {
       this.color = 'yellow';
     } else {
@@ -105,7 +101,7 @@ export class AppComponent {
     }
   }
 
-  pass_data_from_child_to_parent(data) {
+  passDataFromChildToParent(data) {
     console.log('data from child to parent ->>', data);
     this.dataFromChildToParent = JSON.parse(JSON.stringify(data));
   }
@@ -118,15 +114,7 @@ export class AppComponent {
     console.log('onViewChild ->>', this.input1.nativeElement.value);
   }
 
-  onTemplateDrivenFormSubmit(data) {
-    console.log('Template Driven Form Data ->> ', data);
-    this.http.post(`${this.url2}/users`, data)
-      .subscribe((result) => {
-        console.log('Template Driven Form result ->>', result);
-      });
-  }
-
-  // service methods
+  // service methods starts here
   callServiceMethod() {
     this.userData.get_data('Data from component to service');
   }
@@ -151,9 +139,23 @@ export class AppComponent {
         this.postsCallAPIWithService = result;
       });
   }
+  // service methods ends here
+
+  // Form methods starts here
+  onNGFormSubmit(formData) {
+    console.log('formData', formData);
+  }
+
+  onTemplateDrivenFormSubmit(data) {
+    console.log('Template Driven Form Data ->> ', data);
+    this.http.post(`${this.url2}/users`, data)
+      .subscribe((result) => {
+        console.log('Template Driven Form result ->>', result);
+      });
+  }
 
   onReactiveFormSubmit() {
-    console.log('ReactiveForm Data', this.ReactiveForm.value);
+    console.log('ReactiveForm Data ->>', this.ReactiveForm.value);
   }
 
   get email2() {
@@ -163,7 +165,9 @@ export class AppComponent {
   get password2() {
     return this.ReactiveForm.get('password');
   }
+  // Form methods ends here
 
+  // upload file starts here
   uploadFile(file) {
     console.log('uploadFile -> file ->>', file);
     const formData = new FormData();
@@ -213,6 +217,7 @@ export class AppComponent {
     this.files = [];
     fileUpload.click();
   }
+  // upload file ends here
 
   generateVirtualScroll() {
     const numbers = [];
