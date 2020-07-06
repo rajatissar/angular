@@ -8,6 +8,8 @@ import { ChildComponent } from './child/child.component';
 import { NestedRoutesComponent } from './components/nested-routes/nested-routes.component';
 import { NestedRouteComponent } from './components/nested-routes/nested-route/nested-route.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+// guard
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -20,7 +22,9 @@ const routes: Routes = [
   },
   {
     path: 'child',
-    component: ChildComponent
+    component: ChildComponent,
+    canActivate: [AuthGuard]
+
   },
   {
     path: 'nested-route',
