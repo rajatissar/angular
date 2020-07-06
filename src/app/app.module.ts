@@ -17,6 +17,8 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { InputComponent } from './shared/input/input.component';
 import { ButtonComponent } from './shared/button/button.component';
 import { Child2Component } from './child2/child2.component';
+import { NestedRoutesComponent } from './components/nested-routes/nested-routes.component';
+import { NestedRouteComponent } from './components/nested-routes/nested-route/nested-route.component';
 // directives
 import { CustomStyleDirective } from './directives/custom-style.directive';
 import { Renderer2StyleDirective } from './directives/renderer2-style.directive';
@@ -37,6 +39,8 @@ import { UsersModule } from './users/users.module';
     InputComponent,
     ButtonComponent,
     Child2Component,
+    NestedRoutesComponent,
+    NestedRouteComponent,
     CustomStyleDirective,
     Renderer2StyleDirective,
   ],
