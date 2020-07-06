@@ -11,10 +11,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const routes: Routes = [
   {
-    path: '',
-    component: UsersComponent
-  },
-  {
     path: 'users',
     component: UsersComponent
   },
@@ -37,8 +33,17 @@ const routes: Routes = [
     ]
   },
   {
-    path: '**',
+    path: 'page-not-found',
     component: PageNotFoundComponent
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'users'
+  },
+  {
+    path: '**',
+    redirectTo: 'page-not-found'
   }
 ];
 
