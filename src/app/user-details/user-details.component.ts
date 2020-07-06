@@ -11,6 +11,7 @@ export class UserDetailsComponent implements OnInit {
   name: string;
   lastName: string;
   email: string;
+  fragment: string;
 
   constructor(
     private route: ActivatedRoute
@@ -35,6 +36,13 @@ export class UserDetailsComponent implements OnInit {
       .subscribe((queryParams: Params) => {
         this.lastName = queryParams.lastName || 'no last name';
         this.email = queryParams.email || 'no email';
+      });
+
+    console.log('route data (fragment)', this.route.snapshot.fragment);
+    this.fragment = this.route.snapshot.fragment || 'no fragment';
+    this.route.fragment
+      .subscribe((fragment) => {
+        // this.fragment = fragment || 'no fragment';
       });
   }
 

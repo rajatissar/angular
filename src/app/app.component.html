@@ -138,7 +138,9 @@
 <a routerLink="users"> Go to Users </a> <br>
 <a routerLink="child"> Go to Child </a> <br>
 <h3 style="color: green;"> Pass data in routing </h3>
-<a routerLink="details/1/rajat" [queryParams]="{'lastName': 'kumar', 'email': 'rajat@test.com'}"> Go to User 1 </a>
+<a routerLink="details/1/rajat" [queryParams]="{'lastName': 'kumar', 'email': 'rajat@test.com'}" fragment="fragment1">
+    Go to User 1
+</a>
 <br>
 <a routerLink="details/2/sumit"> Go to User 2 </a> <br>
 <a routerLink="details/3/chirag"> Go to User 3 </a> <br>
