@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Observable } from 'rxjs';
+
+// guard
+import { CanComponentDeactivate } from '../../../guard/auth.guard';
 
 @Component({
   selector: 'app-nested-route',
@@ -7,7 +11,7 @@ import { ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./nested-route.component.css']
 })
 
-export class NestedRouteComponent implements OnInit {
+export class NestedRouteComponent implements OnInit, CanComponentDeactivate {
   id: string;
 
   constructor(
@@ -21,5 +25,16 @@ export class NestedRouteComponent implements OnInit {
         this.id = params.id || 'no_id_found';
       });
   }
+
+  canDeactivate(): boolean | Observable<boolean> | Promise<boolean> {
+    console.log('canDeactivate has fired in the component!');
+    if (confirm('You have unsaved changes! If you leave, your changes will be lost.')) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  customMethod() { }
 
 }

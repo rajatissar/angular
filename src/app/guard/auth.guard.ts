@@ -15,11 +15,16 @@ import { Observable } from 'rxjs';
 
 import { AuthService } from './auth.service';
 
+
+export interface CanComponentDeactivate {
+  canDeactivate: () => Observable<boolean> | Promise<boolean> | boolean;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 
-export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad {
+export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<CanComponentDeactivate>, CanLoad {
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -50,11 +55,12 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<u
   }
 
   canDeactivate(
-    component: unknown,
+    component: CanComponentDeactivate,
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+    console.log('canDeactivate fired in AuthGuard');
+    return component.canDeactivate ? component.canDeactivate() : true;
   }
 
   canLoad(
