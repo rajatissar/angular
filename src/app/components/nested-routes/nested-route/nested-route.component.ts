@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Data } from '@angular/router';
 import { Observable } from 'rxjs';
 
 // guard
@@ -23,6 +23,11 @@ export class NestedRouteComponent implements OnInit, CanComponentDeactivate {
     this.route.params
       .subscribe((params: Params) => {
         this.id = params.id || 'no_id_found';
+      });
+
+    this.route.data
+      .subscribe((data: Data) => {
+        console.log('Resolver -> data', data);
       });
   }
 

@@ -13,4 +13,8 @@ export class PostsService {
   getPosts() {
     return this.http.get<[]>(this.url);
   }
+
+  getPost(id) {
+    return this.http.get<[]>(`${this.url}/${id}`);
+  }
 }

@@ -10,6 +10,8 @@ import { NestedRouteComponent } from './components/nested-routes/nested-route/ne
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 // guard
 import { AuthGuard } from './guard/auth.guard';
+// resolver
+import { ResolverService } from './guard/resolver.service';
 
 const routes: Routes = [
   {
@@ -34,6 +36,9 @@ const routes: Routes = [
         path: ':id',
         component: NestedRouteComponent,
         canDeactivate: [AuthGuard],
+        resolve: {
+          data1: ResolverService
+        }
       }
     ]
   },
