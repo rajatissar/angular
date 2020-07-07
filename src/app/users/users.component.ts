@@ -31,17 +31,17 @@ export class UsersComponent implements
   var2 = 'Rajat';
 
   constructor() {
-    console.log('>>LC<< constructor called');
+    console.log('>>LC.1<< constructor called');
   }
 
   ngOnChanges(changes) {
-    console.log('>>LC<< ngOnChanges called');
-    console.log('>>LC<< ngOnChanges -> changes', changes);
+    console.log('>>LC.2<< ngOnChanges called');
+    console.log('>>LC.2<< ngOnChanges -> changes', changes);
   }
 
   ngOnInit(): void {
-    console.log('>>LC<< ngOnInit called');
-    console.log('parent to child data ->>', this.var1);
+    console.log('>>LC.3<< ngOnInit called');
+    console.log('>>LC.3<< ngOnInit parent to child data ->>', this.var1);
   }
 
   // ngDoCheck() {
@@ -49,23 +49,23 @@ export class UsersComponent implements
   // }
 
   ngAfterContentInit() {
-    console.log('>>LC<< ngAfterContentInit called');
+    console.log('>>LC.4<< ngAfterContentInit called');
   }
 
   ngAfterContentChecked() {
-    console.log('>>LC<< ngAfterContentChecked called');
+    console.log('>>LC.5<< ngAfterContentChecked called');
   }
 
   ngAfterViewInit() {
-    console.log('>>LC<< ngAfterViewInit called');
+    console.log('>>LC.6<< ngAfterViewInit called');
   }
 
   ngAfterViewChecked() {
-    console.log('>>LC<< ngAfterViewChecked called');
+    console.log('>>LC.7<< ngAfterViewChecked called');
   }
 
   ngOnDestroy() {
-    console.log('>>LC<< ngOnDestroy called');
+    console.log('>>LC.8<< ngOnDestroy called');
   }
 
 }
