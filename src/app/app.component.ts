@@ -9,6 +9,7 @@ import { UserService } from './services/user.service';
 import { PostsService } from './services/posts.service';
 import { ModalService } from './services/modal.service';
 import { UploadService } from './services/upload.service';
+import { AuthService } from './guard/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -60,6 +61,7 @@ export class AppComponent {
   username = 'Rajat';
   dataFromChildToParent: string;
   dataFromChildToParent2: string;
+  isLoggedIn = false;
 
 
   constructor(
@@ -67,7 +69,8 @@ export class AppComponent {
     private userData: UserService,
     private postData: PostsService,
     private modalData: ModalService,
-    private uploadService: UploadService
+    private uploadService: UploadService,
+    private authService: AuthService,
   ) { }
 
   onInit(): void {
@@ -230,5 +233,13 @@ export class AppComponent {
   updateHeroes() {
     this.heros.push('new hero');
     this.heros = this.heros.slice();
+  }
+
+  onLogin() {
+    this.authService.login();
+  }
+
+  onLogout() {
+    this.authService.logout();
   }
 }
