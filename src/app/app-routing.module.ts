@@ -28,6 +28,7 @@ const routes: Routes = [
   {
     path: 'nested-route',
     component: NestedRoutesComponent,
+    canActivateChild: [AuthGuard],
     children: [
       {
         path: ':id',
