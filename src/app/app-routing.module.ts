@@ -39,7 +39,10 @@ const routes: Routes = [
   },
   {
     path: 'page-not-found',
-    component: PageNotFoundComponent
+    component: PageNotFoundComponent,
+    data: {
+      message: 'static data from route'
+    }
   },
   {
     path: '',
