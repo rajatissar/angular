@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   constructor() { }
 
-  isLoggedIn = false;
+  isLoggedIn = true;
 
   isAuthenticated() {
     return new Promise((resolve, reject) => {

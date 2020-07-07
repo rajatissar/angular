@@ -24,7 +24,6 @@ const routes: Routes = [
     path: 'child',
     component: ChildComponent,
     canActivate: [AuthGuard]
-
   },
   {
     path: 'nested-route',

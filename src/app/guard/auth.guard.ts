@@ -35,11 +35,13 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<u
       return this.router.parseUrl('/admin/login');
     }
   }
+
   canActivateChild(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return true;
   }
+
   canDeactivate(
     component: unknown,
     currentRoute: ActivatedRouteSnapshot,
@@ -47,6 +49,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<u
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return true;
   }
+
   canLoad(
     route: Route,
     segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
