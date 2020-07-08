@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // components
+import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
-import { ChildComponent } from './child/child.component';
+import { ChildComponent } from '../app/components/child/child.component';
 import { NestedRoutesComponent } from './components/nested-routes/nested-routes.component';
 import { NestedRouteComponent } from './components/nested-routes/nested-route/nested-route.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -14,6 +15,10 @@ import { AuthGuard } from './guard/auth.guard';
 import { ResolverService } from './guard/resolver.service';
 
 const routes: Routes = [
+  {
+    path: 'data-binding',
+    component: DataBindingComponent
+  },
   {
     path: 'users',
     component: UsersComponent
@@ -52,7 +57,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'users'
+    redirectTo: 'data-binding'
   },
   {
     path: '**',

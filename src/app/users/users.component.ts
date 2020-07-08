@@ -27,7 +27,6 @@ export class UsersComponent implements
   AfterViewChecked,
   OnDestroy {
 
-  @Input() var1;
   var2 = 'Rajat';
 
   constructor() {
@@ -41,7 +40,6 @@ export class UsersComponent implements
 
   ngOnInit(): void {
     console.log('>>LC.3<< ngOnInit called');
-    console.log('>>LC.3<< ngOnInit parent to child data ->>', this.var1);
   }
 
   // ngDoCheck() {

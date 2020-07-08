@@ -1,0 +1,47 @@
+<h2 style="color: blue;"> Data Binding </h2>
+
+<h3 style="color: green;"> 1. String Interpolation </h3>
+<p> string1 ->> {{string1}} </p>
+<p> array1 ->> {{array1}} </p>
+<p> array1[0] ->> {{array1[0]}} </p>
+<p> object ->> {{object1 | json}} </p>
+<hr>
+
+<h3 style="color: green;"> 2. Property Binding </h3>
+<input type="text" disabled={{disabled}}> Without Property Binding
+<br>
+<input type="text" [disabled]=disabled> With Property Binding
+<hr>
+<p [style.color]="color"> Style property binding </p>
+<button (click)="changeColor()"> Change above paragraph style.color </button>
+<hr>
+
+<h3 style="color: green;"> 3. Event Binding </h3>
+<button (click)="clickEventBinding('hello from click function')"> click event binding </button>
+<br>
+<button (mouseenter)="mouseenterEventBinding('hello from mouseenter function')"> mouseenter event binding</button>
+<br>
+<input type="text" #first_name (keyup)="keyupEventBinding($event)" placeholder="keyup event binding">
+<br>
+<button (click)="getTextBoxValue(first_name)"> Get textbox value </button>
+<hr>
+
+<h3 style="color: green;"> 4. Two way Binding [(ngModel)] </h3>
+<br>
+<input type="text" [(ngModel)]="username">
+<br> {{username}}
+<br>
+<button type="button" [disabled]="!username"> Username </button>
+<hr>
+
+<h3 style="color: green;"> 5. Pass data from parent to child (custom property binding) </h3>
+<button type="button" (click)="passDataFromParentToChild()"> Pass Data from parent to child </button>
+<app-child [var1]="dataFromParentToChild" [var2]="dataFromChild1ToChild2"></app-child>
+<hr>
+
+<h3 style="color: green;"> 6. Pass data from child to parent (custom event binding) & child1 to child2</h3>
+<app-child2 (functionVar)="passDataFromChildToParent($event)" (functionVar2)="passDataFromChild1ToChild2($event)">
+</app-child2>
+<p> data from child to parent ->> {{dataFromChildToParent}}</p>
+<!-- <app-child2 [var2]=" dataFromChildToParent2 "> </app-child2> -->
+<hr>

@@ -8,15 +8,16 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 
 // components
 import { AppComponent } from './app.component';
+import { DataBindingComponent } from './components/data-binding/data-binding.component';
+import { ChildComponent } from './components/child/child.component';
+import { Child2Component } from './components/child2/child2.component';
 import { UsersComponent } from './users/users.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { ChildComponent } from './child/child.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { InputComponent } from './shared/input/input.component';
 import { ButtonComponent } from './shared/button/button.component';
-import { Child2Component } from './child2/child2.component';
 import { NestedRoutesComponent } from './components/nested-routes/nested-routes.component';
 import { NestedRouteComponent } from './components/nested-routes/nested-route/nested-route.component';
 // directives
@@ -30,15 +31,16 @@ import { UsersModule } from './users/users.module';
 @NgModule({
   declarations: [
     AppComponent,
+    DataBindingComponent,
+    ChildComponent,
+    Child2Component,
     UsersComponent,
     HeaderComponent,
     FooterComponent,
-    ChildComponent,
     PageNotFoundComponent,
     UserDetailsComponent,
     InputComponent,
     ButtonComponent,
-    Child2Component,
     NestedRoutesComponent,
     NestedRouteComponent,
     CustomStyleDirective,

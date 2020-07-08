@@ -21,23 +21,15 @@ export class AppComponent {
   @ViewChild('input1') input1: ElementRef;
   @ViewChild('fileUpload', { static: false }) fileUpload: ElementRef;
 
+  title = 'youtube1';
+  color = 'green1';
   files = [];
   uploadedImages = [];
-
-  title = 'Angular';
-  string1 = 'Rajat';
-  array1 = [1, 2, 3, 4];
-  object1 = {
-    first_name: 'Rajat', last_name: 'Kumar'
-  };
-  disabled = false;
   showHiddenText = true;
-  color = 'green1';
   persons = [
     { name: 'Rajat', email: 'rajat.kumar@daffodilsw.com' },
     { name: 'Sherlock', email: 'sherlock@daffodilsw.com' }
   ];
-  heros = ['hulk', 'thor', 'superman', 'batman'];
   model = {
     left: true,
     middle: false,
@@ -58,9 +50,6 @@ export class AppComponent {
   url = 'https://jsonplaceholder.typicode.com';
   url2 = 'http://localhost:3000';
   numbers: number[] = [];
-  username = 'Rajat';
-  dataFromChildToParent: string;
-  dataFromChildToParent2: string;
   isLoggedIn = false;
 
 
@@ -74,43 +63,6 @@ export class AppComponent {
   ) { }
 
   onInit(): void {
-  }
-
-  getTitle() {
-    return this.title;
-  }
-
-  clickEventBinding(param1: string) {
-    console.log('clickEventBinding ->>', param1);
-  }
-
-  mouseenterEventBinding(param1: string) {
-    console.log('mouseenterEventBinding ->>', param1);
-  }
-
-  keyupEventBinding(event) {
-    console.log('keyupEventBinding ->>', event.target.value);
-  }
-
-  getTextBoxValue(item) {
-    console.log('getTextBoxValue ->>', item.value);
-  }
-
-  changeColor() {
-    if (this.color === 'green') {
-      this.color = 'yellow';
-    } else {
-      this.color = 'green';
-    }
-  }
-
-  passDataFromChildToParent(data) {
-    console.log('data from child to parent ->>', data);
-    this.dataFromChildToParent = JSON.parse(JSON.stringify(data));
-  }
-
-  passDataFromChildToParent2(data) {
-    this.dataFromChildToParent2 = JSON.parse(JSON.stringify(data));
   }
 
   onViewChild() {
@@ -228,11 +180,6 @@ export class AppComponent {
       numbers.push(index);
     }
     this.numbers = [...numbers];
-  }
-
-  updateHeroes() {
-    this.heros.push('new hero');
-    this.heros = this.heros.slice();
   }
 
   onLogin() {
