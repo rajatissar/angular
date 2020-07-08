@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 // components
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
+import { DirectiveComponent } from './components/directive/directive.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { ChildComponent } from '../app/components/child/child.component';
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'data-binding',
     component: DataBindingComponent
+  },
+  {
+    path: 'directive',
+    component: DirectiveComponent
   },
   {
     path: 'users',

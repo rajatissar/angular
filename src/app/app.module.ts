@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { ChildComponent } from './components/child/child.component';
 import { Child2Component } from './components/child2/child2.component';
+import { DirectiveComponent } from './components/directive/directive.component';
 import { UsersComponent } from './users/users.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -34,6 +35,7 @@ import { UsersModule } from './users/users.module';
     DataBindingComponent,
     ChildComponent,
     Child2Component,
+    DirectiveComponent,
     UsersComponent,
     HeaderComponent,
     FooterComponent,
