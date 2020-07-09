@@ -1,8 +1,6 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { HttpClient, HttpEventType, HttpErrorResponse } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
 
 // services
 import { UploadService } from './services/upload.service';
@@ -15,15 +13,6 @@ import { AuthService } from './guard/auth.service';
 })
 
 export class AppComponent {
-  @ViewChild('fileUpload', { static: false }) fileUpload: ElementRef;
-
-  files = [];
-  uploadedImages = [];
-  model = {
-    left: true,
-    middle: false,
-    right: false
-  };
   user1 = {
     email: 'rajat.kumar@daffodilsw.com',
     password: 123456
@@ -71,58 +60,6 @@ export class AppComponent {
     return this.ReactiveForm.get('password');
   }
   // Form methods ends here
-
-  // upload file starts here
-  uploadFile(file) {
-    console.log('uploadFile -> file ->>', file);
-    const formData = new FormData();
-    formData.append('file', file.data);
-    file.inProgress = true;
-
-    this.uploadService.upload(formData).pipe(
-      map(event => {
-        switch (event.type) {
-          case HttpEventType.UploadProgress:
-            file.progress = Math.round(event.loaded * 100 / event.total);
-            break;
-          case HttpEventType.Response:
-            return event;
-        }
-      }),
-      catchError((error: HttpErrorResponse) => {
-        file.inProgress = false;
-        return of(`${file.data.name} upload failed.`);
-      }))
-      .subscribe((event: any) => {
-        if (typeof (event) === 'object') {
-          console.log('file_upload result ->>', event.body);
-          this.uploadedImages = [...this.uploadedImages, event.body.link];
-        }
-      });
-  }
-
-  uploadFiles() {
-    this.fileUpload.nativeElement.value = '';
-    this.files.forEach(file => {
-      this.uploadFile(file);
-    });
-  }
-
-  onImageUpload() {
-    const fileUpload = this.fileUpload.nativeElement;
-    console.log('fileUpload nativeElement ->>', fileUpload);
-    fileUpload.onchange = () => {
-      // tslint:disable-next-line: prefer-for-of
-      for (let index = 0; index < fileUpload.files.length; index++) {
-        const file = fileUpload.files[index];
-        this.files.push({ data: file, inProgress: false, progress: 0 });
-      }
-      this.uploadFiles();
-    };
-    this.files = [];
-    fileUpload.click();
-  }
-  // upload file ends here
 
   generateVirtualScroll() {
     const numbers = [];

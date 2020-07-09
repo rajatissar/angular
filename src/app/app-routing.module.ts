@@ -7,6 +7,7 @@ import { DirectiveComponent } from './components/directive/directive.component';
 import { PipesComponent } from './components/pipes/pipes.component';
 import { ServicesComponent } from './components/services/services.component';
 import { ViewChildComponent } from './components/view-child/view-child.component';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
 
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
@@ -39,6 +40,10 @@ const routes: Routes = [
   {
     path: 'view-child',
     component: ViewChildComponent
+  },
+  {
+    path: 'file-upload',
+    component: FileUploadComponent
   },
   {
     path: 'users',
