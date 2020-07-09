@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class DirectiveComponent implements OnInit {
+  showHiddenText = true;
+  title = 'angular';
+  color = 'green1';
+  persons = [
+    { name: 'Rajat', email: 'rajat.kumar@daffodilsw.com' },
+    { name: 'Sherlock', email: 'sherlock@daffodilsw.com' }
+  ];
 
   constructor() { }
 

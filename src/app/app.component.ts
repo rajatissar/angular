@@ -21,15 +21,8 @@ export class AppComponent {
   @ViewChild('input1') input1: ElementRef;
   @ViewChild('fileUpload', { static: false }) fileUpload: ElementRef;
 
-  title = 'youtube1';
-  color = 'green1';
   files = [];
   uploadedImages = [];
-  showHiddenText = true;
-  persons = [
-    { name: 'Rajat', email: 'rajat.kumar@daffodilsw.com' },
-    { name: 'Sherlock', email: 'sherlock@daffodilsw.com' }
-  ];
   model = {
     left: true,
     middle: false,

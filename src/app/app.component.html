@@ -16,50 +16,6 @@
 <app-login></app-login>
 <hr>
 
-<h2 style="color: blue;"> Directive </h2>
-<h3 style="color: green;"> 1. *ngIf </h3>
-<p *ngIf=showHiddenText> Hidden Text </p>
-<hr>
-<h3 style="color: green;"> 2. *ngIf if/else</h3>
-<p *ngIf="showHiddenText; then if_block else else_block"></p>
-<p *ngIf="showHiddenText && title=='youtube1' then if_block else else_block"></p>
-<ng-template #if_block>
-    <p> If Block </p>
-</ng-template>
-<ng-template #else_block>
-    <p> Else Block </p>
-</ng-template>
-<hr>
-<h3 style="color: green;"> 3. *ngSwitch </h3>
-<div [ngSwitch]="color">
-    <p *ngSwitchCase="'yellow'" style="color: yellow"> Yellow color</p>
-    <p *ngSwitchCase="'green'" style="color: green;"> Green color</p>
-    <p *ngSwitchDefault style="color: red;"> Red color</p>
-</div>
-<hr>
-<h3 style="color: green;"> 4. *ngFor </h3>
-<p *ngFor="let person of persons">{{person.name}} -> {{person.email}}</p>
-<hr>
-<h3 style="color: green;"> 5. ngStyle </h3>
-<p [ngStyle]="{'color': 'orange'}"> orange color </p>
-<hr>
-<h3 style="color: green;"> 5. ngClass </h3>
-<p [ngClass]="{'class1':true}"> orange color </p>
-<hr>
-<h3 style="color: green;"> 6. ngContent </h3>
-<app-child2>
-    <p #contentChild1> This will get embed in child2 component by ng-content directive </p>
-</app-child2>
-<hr>
-<h3 style="color: green;"> 7. Custom style Directive </h3>
-<p> No color (Default behavior) </p>
-<p appCustomStyle> Green color from Custom style Directive </p>
-<hr>
-<h3 style="color: green;"> 8. Renderer2 Directive </h3>
-<p appRenderer2Style> Yellow color from Renderer2 Directive </p>
-<p appRenderer2Style [defaultColor]="'orange'" [highlightColor]="'blue'"> Orange color from Renderer2 Directive </p>
-<hr>
-
 <h2 style="color: blue;"> Routing </h2>
 <a routerLink="users"> Go to Users </a> <br>
 <a routerLink="child"> Go to Child </a> <br>
