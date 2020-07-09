@@ -8,6 +8,7 @@ import { PipesComponent } from './components/pipes/pipes.component';
 import { ServicesComponent } from './components/services/services.component';
 import { ViewChildComponent } from './components/view-child/view-child.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { VirtualScrollComponent } from './components/virtual-scroll/virtual-scroll.component';
 
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
@@ -44,6 +45,10 @@ const routes: Routes = [
   {
     path: 'file-upload',
     component: FileUploadComponent
+  },
+  {
+    path: 'virtual-scroll',
+    component: VirtualScrollComponent
   },
   {
     path: 'users',

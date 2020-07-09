@@ -22,7 +22,6 @@ export class AppComponent {
     password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(8)])
   });
   url2 = 'http://localhost:3000';
-  numbers: number[] = [];
   isLoggedIn = false;
 
 
@@ -60,14 +59,6 @@ export class AppComponent {
     return this.ReactiveForm.get('password');
   }
   // Form methods ends here
-
-  generateVirtualScroll() {
-    const numbers = [];
-    for (let index = 0; index < 10000; index++) {
-      numbers.push(index);
-    }
-    this.numbers = [...numbers];
-  }
 
   onLogin() {
     this.authService.login();

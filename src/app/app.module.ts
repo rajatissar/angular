@@ -17,6 +17,7 @@ import { PipesComponent } from './components/pipes/pipes.component';
 import { ServicesComponent } from './components/services/services.component';
 import { ViewChildComponent } from './components/view-child/view-child.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { VirtualScrollComponent } from './components/virtual-scroll/virtual-scroll.component';
 
 import { UsersComponent } from './users/users.component';
 import { HeaderComponent } from './header/header.component';
@@ -47,6 +48,7 @@ import { UsersModule } from './components/users/users.module';
     ServicesComponent,
     ViewChildComponent,
     FileUploadComponent,
+    VirtualScrollComponent,
     UsersComponent,
     HeaderComponent,
     FooterComponent,
