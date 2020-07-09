@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { DirectiveComponent } from './components/directive/directive.component';
 import { PipesComponent } from './components/pipes/pipes.component';
+import { ServicesComponent } from './components/services/services.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { ChildComponent } from '../app/components/child/child.component';
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'pipe',
     component: PipesComponent
+  },
+  {
+    path: 'service',
+    component: ServicesComponent
   },
   {
     path: 'users',

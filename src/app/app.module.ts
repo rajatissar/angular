@@ -14,6 +14,8 @@ import { Child2Component } from './components/child2/child2.component';
 import { DirectiveComponent } from './components/directive/directive.component';
 import { Child3Component } from './components/child3/child3.component';
 import { PipesComponent } from './components/pipes/pipes.component';
+import { ServicesComponent } from './components/services/services.component';
+
 import { UsersComponent } from './users/users.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -29,7 +31,7 @@ import { Renderer2StyleDirective } from './directives/renderer2-style.directive'
 // modules
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './modules/material/material.module';
-import { UsersModule } from './users/users.module';
+import { UsersModule } from './components/users/users.module';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { UsersModule } from './users/users.module';
     DirectiveComponent,
     Child3Component,
     PipesComponent,
+    ServicesComponent,
     UsersComponent,
     HeaderComponent,
     FooterComponent,

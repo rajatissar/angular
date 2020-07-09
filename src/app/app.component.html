@@ -12,10 +12,6 @@
 </p>
 <hr>
 
-<h2 style="color: blue;"> Showing Login component by using module </h2>
-<app-login></app-login>
-<hr>
-
 <h2 style="color: blue;"> Routing </h2>
 <a routerLink="users"> Go to Users </a> <br>
 <a routerLink="child"> Go to Child </a> <br>
@@ -47,26 +43,6 @@
 </a>
 <br>
 <app-nested-routes></app-nested-routes>
-<hr>
-
-<h2 style="color: blue;"> Services </h2>
-<button (click)=" callServiceMethod() "> Call service method </button>
-<br>
-<button (click)=" callServiceMethodWithInterface() "> Call service method with Interface </button>
-<br>
-<button (click)="callGETAPIWithoutUsingService()"> Call GET API without using service </button>
-<ul>
-    <li *ngFor="let post of posts">{{post.id}} -> {{post.title}}</li>
-</ul>
-<button (click)="callRESTAPIByUsingService()"> Call REST API by using service </button>
-<ul>
-    <li *ngFor=" let postCallAPIWithService of postsCallAPIWithService ">
-        {{postCallAPIWithService.id}} -> {{postCallAPIWithService.title}}</li>
-</ul>
-<br>
-<h3 style="color: green;"> Manage data using service </h3>
-<app-active-users></app-active-users>
-<app-inactive-users></app-inactive-users>
 <hr>
 
 <h2 style="color: blue;"> @ViewChild </h2>

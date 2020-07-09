@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoginComponent } from './login/login.component';
+// import { LoginComponent } from './login/login.component';
 import { ActiveUsersComponent } from './active-users/active-users.component';
 import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
 
 @NgModule({
   declarations: [
-    LoginComponent,
+    // LoginComponent,
     ActiveUsersComponent,
     InactiveUsersComponent
   ],
@@ -15,7 +15,7 @@ import { InactiveUsersComponent } from './inactive-users/inactive-users.componen
     CommonModule
   ],
   exports: [
-    LoginComponent,
+    // LoginComponent,
     ActiveUsersComponent,
     InactiveUsersComponent
   ]

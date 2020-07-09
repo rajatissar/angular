@@ -10,8 +10,8 @@ export class UserService {
 
   constructor() { }
 
-  get_data(data) {
-    console.log('user-service -> get_data ->>', data);
+  getData(data) {
+    console.log('user-service -> getData ->>', data);
   }
 
   setActive(id: number) {

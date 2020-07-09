@@ -28,8 +28,6 @@ export class AppComponent {
     middle: false,
     right: false
   };
-  posts: Array<object>;
-  postsCallAPIWithService: Array<object>;
   user1 = {
     email: 'rajat.kumar@daffodilsw.com',
     password: 123456
@@ -38,7 +36,6 @@ export class AppComponent {
     email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(8)])
   });
-  url = 'https://jsonplaceholder.typicode.com';
   url2 = 'http://localhost:3000';
   numbers: number[] = [];
   isLoggedIn = false;
@@ -46,9 +43,6 @@ export class AppComponent {
 
   constructor(
     private http: HttpClient,
-    private userData: UserService,
-    private postData: PostsService,
-    private modalData: ModalService,
     private uploadService: UploadService,
     private authService: AuthService,
   ) { }
@@ -59,33 +53,6 @@ export class AppComponent {
   onViewChild() {
     console.log('onViewChild ->>', this.input1.nativeElement.value);
   }
-
-  // service methods starts here
-  callServiceMethod() {
-    this.userData.get_data('Data from component to service');
-  }
-
-  callServiceMethodWithInterface() {
-    const data = this.modalData.getData();
-    console.log('callGETAPIWithoutUsingService ->>', data);
-  }
-
-  callGETAPIWithoutUsingService() {
-    this.http.get<[]>(`${this.url}/posts`)
-      .subscribe((data) => {
-        console.log('callGETAPIWithoutUsingService data ->>', data);
-        this.posts = data;
-      });
-  }
-
-  callRESTAPIByUsingService() {
-    this.postData.getPosts()
-      .subscribe((result) => {
-        console.log('callRESTAPIByUsingService -> result ->>', result);
-        this.postsCallAPIWithService = result;
-      });
-  }
-  // service methods ends here
 
   // Form methods starts here
   onNGFormSubmit(formData) {

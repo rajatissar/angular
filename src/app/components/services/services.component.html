@@ -1,0 +1,24 @@
+<h2 style="color: blue;"> Services </h2>
+<button (click)=" callServiceMethod() "> 1. Call service method from component </button>
+<br>
+
+<button (click)=" callServiceMethodWithInterface() "> 2. Call service method with Interface </button>
+<br>
+
+<button (click)="callGETAPIWithoutUsingService()"> 3. Call GET API without using service </button>
+<ul>
+	<li *ngFor="let post of posts">{{post.id}} -> {{post.title}}</li>
+</ul>
+
+<button (click)="callRESTAPIByUsingService()"> 4. Call REST API by using service </button>
+<ul>
+	<li *ngFor=" let postCallAPIWithService of postsCallAPIWithService ">
+		{{postCallAPIWithService.id}} -> {{postCallAPIWithService.title}}
+	</li>
+</ul>
+<br>
+
+<h3 style="color: green;"> 5. Manage data using service </h3>
+<app-active-users></app-active-users>
+<app-inactive-users></app-inactive-users>
+<hr>
