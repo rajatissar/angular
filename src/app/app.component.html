@@ -45,27 +45,6 @@
 <app-nested-routes></app-nested-routes>
 <hr>
 
-<h2 style="color: blue;"> Bootstrap </h2>
-<p>
-    <ngb-alert [dismissible]="false">
-        <strong>Warning!</strong> Better check yourself, you're not looking too good.
-    </ngb-alert>
-</p>
-<div class="btn-group btn-group-toggle">
-    <label class="btn-primary" ngbButtonLabel>
-        <input type="checkbox" ngbButton [(ngModel)]="model.left"> Left (pre-checked)
-    </label>
-    <label class="btn-primary" ngbButtonLabel>
-        <input type="checkbox" ngbButton [(ngModel)]="model.middle"> Middle
-    </label>
-    <label class="btn-primary" ngbButtonLabel>
-        <input type="checkbox" ngbButton [(ngModel)]="model.right"> Right
-    </label>
-</div>
-<hr>
-<pre>{{model | json}}</pre>
-<hr>
-
 <h2 style="color: blue;"> Form </h2>
 <h3 style="color: green;"> 1. ngForm </h3>
 <form #userForm="ngForm" (ngSubmit)="onNGFormSubmit(userForm.value)">
