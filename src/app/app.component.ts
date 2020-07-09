@@ -30,8 +30,6 @@ export class AppComponent {
   };
   posts: Array<object>;
   postsCallAPIWithService: Array<object>;
-  strPipe = 'hello';
-  datePipe = new Date();
   user1 = {
     email: 'rajat.kumar@daffodilsw.com',
     password: 123456

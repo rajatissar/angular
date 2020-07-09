@@ -13,6 +13,7 @@ import { ChildComponent } from './components/child/child.component';
 import { Child2Component } from './components/child2/child2.component';
 import { DirectiveComponent } from './components/directive/directive.component';
 import { Child3Component } from './components/child3/child3.component';
+import { PipesComponent } from './components/pipes/pipes.component';
 import { UsersComponent } from './users/users.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -38,6 +39,7 @@ import { UsersModule } from './users/users.module';
     Child2Component,
     DirectiveComponent,
     Child3Component,
+    PipesComponent,
     UsersComponent,
     HeaderComponent,
     FooterComponent,
