@@ -5,9 +5,6 @@ import { of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
 // services
-import { UserService } from './services/user.service';
-import { PostsService } from './services/posts.service';
-import { ModalService } from './services/modal.service';
 import { UploadService } from './services/upload.service';
 import { AuthService } from './guard/auth.service';
 
@@ -18,7 +15,6 @@ import { AuthService } from './guard/auth.service';
 })
 
 export class AppComponent {
-  @ViewChild('input1') input1: ElementRef;
   @ViewChild('fileUpload', { static: false }) fileUpload: ElementRef;
 
   files = [];
@@ -48,10 +44,6 @@ export class AppComponent {
   ) { }
 
   onInit(): void {
-  }
-
-  onViewChild() {
-    console.log('onViewChild ->>', this.input1.nativeElement.value);
   }
 
   // Form methods starts here
